@@ -18,10 +18,17 @@ This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot w
   - `left_wrist_camera_optical_frame`
   - `right_wrist_camera_link`
   - `right_wrist_camera_optical_frame`
+- Gripper tip midpoint frames are included:
+  - `left_gripper_tip_middle_link`
+  - `right_gripper_tip_middle_link`
 - Gripper drive gear links/joints are removed.
 - Same-side gripper fingers are coupled with URDF `mimic` tags:
   - `left_gripper_right_finger_joint` mimics `left_gripper_left_finger_joint`
   - `right_gripper_right_finger_joint` mimics `right_gripper_left_finger_joint`
+- Arm joint order, zero pose, limits, and positive directions follow the older
+  `bhl_arm_1` scheme. Downstream controllers, RL code, and ROS 2 integrations
+  that were built around the old convention should be able to use this URDF
+  without remapping joint semantics.
 - Link, joint, and mesh names are ASCII snake_case.
 - Mesh paths use `package://lite_urdf/meshes/...`.
 

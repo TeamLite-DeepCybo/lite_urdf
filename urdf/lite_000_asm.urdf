@@ -1779,6 +1779,20 @@
             <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
         </inertial>
     </link>
+    <link name="left_gripper_tip_middle_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="right_gripper_tip_middle_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
     <joint name="world_root_to_base_vertical_joint" type="fixed">
         <parent link="world_root" />
         <child link="base_vertical_link" />
@@ -1789,144 +1803,12 @@
         <child link="frame_rail_assembly_link" />
         <origin xyz="0.162358 0.153 0.048" rpy="1.5708 0 3.14159" />
     </joint>
-    <joint name="right_wrist_pitch_joint" type="revolute">
-        <parent link="right_wrist_roll_aux_motor_link" />
-        <child link="right_wrist_pitch_link" />
-        <origin xyz="0 0 0" rpy="0 1.5708 -4.71239" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-1.03932" upper="0.531478" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="left_shoulder_yaw_joint" type="revolute">
-        <parent link="left_shoulder_yaw_actuator_link" />
-        <child link="left_shoulder_yaw_link" />
-        <origin xyz="0.013435 -0.013435 -0.052" rpy="0 -1.5708 4.71239" />
-        <axis xyz="1 0 0" />
-        <limit lower="-1.13098" upper="2.01062" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="right_shoulder_roll_joint" type="revolute">
-        <parent link="right_shoulder_roll_actuator_link" />
-        <child link="right_shoulder_roll_link" />
-        <origin xyz="-0.013435 -0.013435 -0.052" rpy="-1.5708 0 3.14159" />
-        <axis xyz="0 -1 0" />
-        <limit lower="-0.756945" upper="2.73371" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="right_shoulder_pitch_joint" type="revolute">
-        <parent link="right_shoulder_pitch_motor_link" />
-        <child link="right_shoulder_pitch_link" />
-        <origin xyz="0 0 -0.004" rpy="0 1.5708 1.5708" />
-        <axis xyz="-1 0 0" />
-        <limit lower="-2.72505" upper="1.20194" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="left_elbow_pitch_joint" type="revolute">
-        <parent link="left_elbow_actuator_link" />
-        <child link="left_elbow_pitch_link" />
-        <origin xyz="0 0 -0.001" rpy="-3.14159 0 3.14159" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-0.182318" upper="2.17388" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="left_shoulder_pitch_joint" type="revolute">
-        <parent link="left_shoulder_pitch_motor_link" />
-        <child link="left_shoulder_pitch_link" />
-        <origin xyz="0 0 -0.004" rpy="0 -1.5708 4.71239" />
-        <axis xyz="1 0 0" />
-        <limit lower="-1.8997" upper="2.02729" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="right_shoulder_yaw_joint" type="revolute">
-        <parent link="right_shoulder_yaw_actuator_link" />
-        <child link="right_shoulder_yaw_link" />
-        <origin xyz="0 0 -0.052" rpy="0 1.5708 -1.5708" />
-        <axis xyz="-1 0 0" />
-        <limit lower="-3.12357" upper="0.0180244" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
     <joint name="left_wrist_pitch_joint" type="revolute">
         <parent link="left_wrist_roll_aux_motor_link" />
         <child link="left_wrist_pitch_link" />
-        <origin xyz="0 0 0" rpy="0 1.5708 1.5708" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-1.24937" upper="0.32143" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="left_shoulder_roll_joint" type="revolute">
-        <parent link="left_shoulder_roll_actuator_link" />
-        <child link="left_shoulder_roll_link" />
-        <origin xyz="0 0 -0.001" rpy="-1.5708 0 3.14159" />
-        <axis xyz="0 -1 0" />
-        <limit lower="-3.00182" upper="0.488835" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="right_elbow_pitch_joint" type="revolute">
-        <parent link="right_elbow_actuator_link" />
-        <child link="right_elbow_pitch_link" />
-        <origin xyz="0 0 -0.001" rpy="3.14159 0 -1.5708" />
-        <axis xyz="0 0 -1" />
-        <limit lower="-1.87973" upper="0.476469" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="left_wrist_yaw_joint" type="revolute">
-        <parent link="left_elbow_pitch_link" />
-        <child link="left_wrist_yaw_motor_link" />
-        <origin xyz="-0.0339087 -0.0551924 -0.0271" rpy="3.14159 0.101359 2.43568" />
-        <axis xyz="0 1 0" />
-        <limit lower="-3.04023" upper="0.101359" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-    </joint>
-    <joint name="right_wrist_yaw_joint" type="revolute">
-        <parent link="right_elbow_pitch_link" />
-        <child link="right_wrist_yaw_motor_link" />
-        <origin xyz="0.0634578 -0.0130041 -0.0264" rpy="3.14159 1.01388 -1.61793" />
-        <axis xyz="0 1 0" />
-        <limit lower="-0.556921" upper="2.58467" effort="1" velocity="1" />
+        <origin xyz="0 0 0" rpy="1.5708045 1.1068263 -3.1415816" />
+        <axis xyz="0 0 1" />
+        <limit lower="-0.7854" upper="0.7854" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
@@ -1936,9 +1818,81 @@
     <joint name="left_wrist_roll_joint" type="revolute">
         <parent link="left_wrist_yaw_link" />
         <child link="left_wrist_roll_link" />
-        <origin xyz="-0.137 -0.026 0" rpy="0 0 0" />
+        <origin xyz="-0.137 -0.026 0" rpy="0 0.4140965 0" />
         <axis xyz="0 -1 0" />
-        <limit lower="-1.11223" upper="0.284037" effort="1" velocity="1" />
+        <limit lower="-0.6981335" upper="0.6981335" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_wrist_yaw_joint" type="revolute">
+        <parent link="left_elbow_pitch_link" />
+        <child link="left_wrist_yaw_motor_link" />
+        <origin xyz="-0.0339087 -0.0551924 -0.0271" rpy="2.1761163 1.5707931 1.4702039" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.5707945" upper="1.5707945" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_elbow_pitch_joint" type="revolute">
+        <parent link="left_elbow_actuator_link" />
+        <child link="left_elbow_pitch_link" />
+        <origin xyz="0 0 -0.001" rpy="-3.14159 0.0000005 2.959272" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-2.356198" upper="0" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_shoulder_yaw_joint" type="revolute">
+        <parent link="left_shoulder_yaw_actuator_link" />
+        <child link="left_shoulder_yaw_link" />
+        <origin xyz="0.013435 -0.013435 -0.052" rpy="-2.7017727 -1.5707927 1.5707973" />
+        <axis xyz="1 0 0" />
+        <limit lower="-1.5708" upper="1.5708" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_shoulder_roll_joint" type="revolute">
+        <parent link="left_shoulder_roll_actuator_link" />
+        <child link="left_shoulder_roll_link" />
+        <origin xyz="0 0 -0.001" rpy="-1.5707998 0.0000011 -2.8272929" />
+        <axis xyz="0 1 0" />
+        <limit lower="-0.1745326" upper="3.3161224" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_shoulder_pitch_joint" type="revolute">
+        <parent link="left_shoulder_pitch_motor_link" />
+        <child link="left_shoulder_pitch_link" />
+        <origin xyz="0 0 -0.004" rpy="2.0272911 -1.5707927 1.5707973" />
+        <axis xyz="1 0 0" />
+        <limit lower="-3.1415916" upper="0.7853984" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_wrist_pitch_joint" type="revolute">
+        <parent link="right_wrist_roll_aux_motor_link" />
+        <child link="right_wrist_pitch_link" />
+        <origin xyz="0 0 0" rpy="1.5708109 1.3168753 -3.1415795" />
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785399" upper="0.785399" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
@@ -1948,21 +1902,69 @@
     <joint name="right_wrist_roll_joint" type="revolute">
         <parent link="right_wrist_yaw_link" />
         <child link="right_wrist_roll_motor_link" />
-        <origin xyz="0.137 -0.026 0" rpy="0 0 0" />
-        <axis xyz="0 -1 0" />
-        <limit lower="-0.623811" upper="0.772453" effort="1" velocity="1" />
+        <origin xyz="0.137 -0.026 0" rpy="0 -0.074321 0" />
+        <axis xyz="0 1 0" />
+        <limit lower="-0.698132" upper="0.698132" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
             <armature>0</armature>
         </hardware>
     </joint>
-    <joint name="right_gripper_left_finger_joint" type="prismatic">
-        <parent link="right_gripper_slider_base_link" />
-        <child link="right_gripper_finger_left_link" />
-        <origin xyz="-0.0397241 0.0035 0.0033" rpy="0 0 0" />
-        <axis xyz="1 0 0" />
-        <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
+    <joint name="right_wrist_yaw_joint" type="revolute">
+        <parent link="right_elbow_pitch_link" />
+        <child link="right_wrist_yaw_motor_link" />
+        <origin xyz="0.0634578 -0.0130041 -0.0264" rpy="3.1415913 0.0000055 -1.6179277" />
+        <axis xyz="0 1 0" />
+        <limit lower="-1.5707955" upper="1.5707955" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_elbow_pitch_joint" type="revolute">
+        <parent link="right_elbow_actuator_link" />
+        <child link="right_elbow_pitch_link" />
+        <origin xyz="0 0 -0.001" rpy="3.1415903 0.0000012 -1.094331" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-2.356199" upper="0" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_shoulder_yaw_joint" type="revolute">
+        <parent link="right_shoulder_yaw_actuator_link" />
+        <child link="right_shoulder_yaw_link" />
+        <origin xyz="0 0 -0.052" rpy="-1.5888199 1.5707927 1.5707927" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-1.5707972" upper="1.5707972" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_shoulder_roll_joint" type="revolute">
+        <parent link="right_shoulder_roll_actuator_link" />
+        <child link="right_shoulder_roll_link" />
+        <origin xyz="-0.013435 -0.013435 -0.052" rpy="-1.5707994 -0.000002 2.5591776" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-3.3161224" upper="0.1745326" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_shoulder_pitch_joint" type="revolute">
+        <parent link="right_shoulder_pitch_motor_link" />
+        <child link="right_shoulder_pitch_link" />
+        <origin xyz="0 0 -0.004" rpy="2.7250511 1.5707927 -1.5707927" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-3.1415916" upper="0.7853984" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
@@ -1973,6 +1975,31 @@
         <parent link="left_gripper_slider_base_link" />
         <child link="left_gripper_finger_left_link" />
         <origin xyz="-0.0384585 0.0035 0.0033" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_gripper_right_finger_joint" type="prismatic">
+        <parent link="left_gripper_slider_base_link" />
+        <child link="left_gripper_finger_right_link" />
+        <origin xyz="-0.11025 0.0035 0.0033" rpy="0 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="0" upper="0.047" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+        <mimic joint="left_gripper_left_finger_joint" multiplier="1" offset="0" />
+    </joint>
+    <joint name="right_gripper_left_finger_joint" type="prismatic">
+        <parent link="right_gripper_slider_base_link" />
+        <child link="right_gripper_finger_left_link" />
+        <origin xyz="-0.0397241 0.0035 0.0033" rpy="0 0 0" />
         <axis xyz="1 0 0" />
         <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
         <hardware>
@@ -1993,19 +2020,6 @@
             <armature>0</armature>
         </hardware>
         <mimic joint="right_gripper_left_finger_joint" multiplier="1" offset="0" />
-    </joint>
-    <joint name="left_gripper_right_finger_joint" type="prismatic">
-        <parent link="left_gripper_slider_base_link" />
-        <child link="left_gripper_finger_right_link" />
-        <origin xyz="-0.11025 0.0035 0.0033" rpy="0 0 0" />
-        <axis xyz="-1 0 0" />
-        <limit lower="0" upper="0.047" effort="1" velocity="1" />
-        <hardware>
-            <motorType>None</motorType>
-            <motorDirection>1</motorDirection>
-            <armature>0</armature>
-        </hardware>
-        <mimic joint="left_gripper_left_finger_joint" multiplier="1" offset="0" />
     </joint>
     <joint name="fixed_1_joint" type="fixed">
         <parent link="right_wrist_pitch_link" />
@@ -2471,5 +2485,15 @@
         <parent link="right_wrist_camera_link" />
         <child link="right_wrist_camera_optical_frame" />
         <origin xyz="0 0 0" rpy="-1.5707963 0 -1.5707963" />
+    </joint>
+    <joint name="left_gripper_tip_middle_joint" type="fixed">
+        <parent link="left_gripper_slider_base_link" />
+        <child link="left_gripper_tip_middle_link" />
+        <origin xyz="-0.0743543 0 0.0047" rpy="0 0 0" />
+    </joint>
+    <joint name="right_gripper_tip_middle_joint" type="fixed">
+        <parent link="right_gripper_slider_base_link" />
+        <child link="right_gripper_tip_middle_link" />
+        <origin xyz="-0.0749871 0 0.0047" rpy="0 0 0" />
     </joint>
 </robot>

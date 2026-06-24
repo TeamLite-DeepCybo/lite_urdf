@@ -14,6 +14,42 @@ This file keeps the full cleaned CAD assembly while preserving:
 2 gripper mimic constraints
 ```
 
+## Joint Convention Compatibility
+
+The arm joints intentionally follow the older `bhl_arm_1` convention for:
+
+- XML joint ordering
+- zero-pose meaning
+- lower/upper limits
+- positive joint direction
+
+The movable joint order is:
+
+```text
+left_wrist_pitch_joint
+left_wrist_roll_joint
+left_wrist_yaw_joint
+left_elbow_pitch_joint
+left_shoulder_yaw_joint
+left_shoulder_roll_joint
+left_shoulder_pitch_joint
+right_wrist_pitch_joint
+right_wrist_roll_joint
+right_wrist_yaw_joint
+right_elbow_pitch_joint
+right_shoulder_yaw_joint
+right_shoulder_roll_joint
+right_shoulder_pitch_joint
+left_gripper_left_finger_joint
+left_gripper_right_finger_joint
+right_gripper_left_finger_joint
+right_gripper_right_finger_joint
+```
+
+Integrations should treat `urdf/lite_000_asm.urdf` as a drop-in replacement for
+the old arm convention. Avoid adding simulator-side sign flips, reordered joint
+lists, or extra home offsets unless the target stack explicitly needs them.
+
 Do not use an automatically collapsed fixed-joint simplification unless it has been visually verified. A previous generated simplification produced incorrect geometry placement, so the full cleaned URDF remains the reliable handoff file.
 
 ## Fixed Joint Merge Guidance
