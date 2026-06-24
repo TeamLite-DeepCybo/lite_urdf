@@ -50,6 +50,17 @@ Integrations should treat `urdf/lite_000_asm.urdf` as a drop-in replacement for
 the old arm convention. Avoid adding simulator-side sign flips, reordered joint
 lists, or extra home offsets unless the target stack explicitly needs them.
 
+The gripper midpoint frames are fixed links under each gripper slider base:
+
+```text
+left_gripper_tip_middle_link
+right_gripper_tip_middle_link
+```
+
+Both midpoint frames are placed at the centered fingertip x/y position with
+local `z=0.063`. Preserve these links during fixed-joint merging if a downstream
+controller or policy uses them as task-space frames.
+
 Do not use an automatically collapsed fixed-joint simplification unless it has been visually verified. A previous generated simplification produced incorrect geometry placement, so the full cleaned URDF remains the reliable handoff file.
 
 ## Fixed Joint Merge Guidance

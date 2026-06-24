@@ -21,6 +21,8 @@ This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot w
 - Gripper tip midpoint frames are included:
   - `left_gripper_tip_middle_link`
   - `right_gripper_tip_middle_link`
+  - both are fixed to their gripper slider base at the centered fingertip x/y
+    position with local `z=0.063`
 - Gripper drive gear links/joints are removed.
 - Same-side gripper fingers are coupled with URDF `mimic` tags:
   - `left_gripper_right_finger_joint` mimics `left_gripper_left_finger_joint`

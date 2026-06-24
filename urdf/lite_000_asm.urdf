@@ -2489,11 +2489,11 @@
     <joint name="left_gripper_tip_middle_joint" type="fixed">
         <parent link="left_gripper_slider_base_link" />
         <child link="left_gripper_tip_middle_link" />
-        <origin xyz="-0.0743543 0 0.0047" rpy="0 0 0" />
+        <origin xyz="-0.0743543 0 0.063" rpy="0 0 0" />
     </joint>
     <joint name="right_gripper_tip_middle_joint" type="fixed">
         <parent link="right_gripper_slider_base_link" />
         <child link="right_gripper_tip_middle_link" />
-        <origin xyz="-0.0749871 0 0.0047" rpy="0 0 0" />
+        <origin xyz="-0.0749871 0 0.063" rpy="0 0 0" />
     </joint>
 </robot>
