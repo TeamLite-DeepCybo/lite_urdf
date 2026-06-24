@@ -1,0 +1,2475 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="lite_000_asm">
+    <link name="body_rear_panel_link">
+        <visual>
+            <origin xyz="0 -0.168 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/body_rear_panel.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 -0.114831 0" rpy="0 0 0" />
+            <mass value="0.0020103" />
+            <inertia ixx="0.0000454" ixy="0" ixz="0" iyy="0.0000786" iyz="0" izz="0.0000454" />
+        </inertial>
+    </link>
+    <link name="body_top_plate_link">
+        <visual>
+            <origin xyz="0 0.0936 -0.0485" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/body_top_plate.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.0840241 -0.0115195" rpy="0 0 0" />
+            <mass value="0.0002936" />
+            <inertia ixx="0.0000015" ixy="0" ixz="0" iyy="0.0000013" iyz="0" izz="0.0000024" />
+        </inertial>
+    </link>
+    <link name="right_wrist_yaw_motor_link">
+        <visual>
+            <origin xyz="0 -0.0305 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_yaw_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
+            <mass value="0.0000254" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_yaw_aux_motor_link">
+        <visual>
+            <origin xyz="0 -0.0305 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_yaw_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
+            <mass value="0.0000254" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_roll_aux_motor_link">
+        <visual>
+            <origin xyz="0 -0.0305 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_yaw_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
+            <mass value="0.0000254" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_yaw_aux_motor_link">
+        <visual>
+            <origin xyz="0 -0.0305 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_yaw_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
+            <mass value="0.0000254" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_yaw_motor_link">
+        <visual>
+            <origin xyz="0 -0.0305 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_yaw_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
+            <mass value="0.0000254" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_roll_aux_motor_link">
+        <visual>
+            <origin xyz="0 -0.0305 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_yaw_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
+            <mass value="0.0000254" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_pitch_motor_link">
+        <visual>
+            <origin xyz="-0.0939161 -0.0799966 0.0455" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/shoulder_pitch_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0010107 0.0002459 0.0155334" rpy="0 0 0" />
+            <mass value="0.0000448" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_pitch_motor_link">
+        <visual>
+            <origin xyz="-0.0939161 -0.0799966 0.0455" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/shoulder_pitch_motor.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0010107 0.0002459 0.0155334" rpy="0 0 0" />
+            <mass value="0.0000448" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="body_front_plate_link">
+        <visual>
+            <origin xyz="-0.0686 -0.0686 -0.08" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/body_front_plate.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0686 -0.0682228 -0.0002434" rpy="0 0 0" />
+            <mass value="0.000113" />
+            <inertia ixx="0.0000003" ixy="0" ixz="0" iyy="0.0000003" iyz="0" izz="0.0000006" />
+        </inertial>
+    </link>
+    <link name="base_vertical_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/base_vertical_member.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0.152871" rpy="0 0 0" />
+            <mass value="0.0004527" />
+            <inertia ixx="0.0000034" ixy="0" ixz="0" iyy="0.0000034" iyz="0" izz="0.0000003" />
+        </inertial>
+    </link>
+    <link name="base_support_link">
+        <visual>
+            <origin xyz="0 0 -0.217" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/base_support_member.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 -0.110622" rpy="0 0 0" />
+            <mass value="0.0003272" />
+            <inertia ixx="0.0000013" ixy="0" ixz="0" iyy="0.0000013" iyz="0" izz="0.0000002" />
+        </inertial>
+    </link>
+    <link name="frame_front_right_short_link">
+        <visual>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x100_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <mass value="0.00009" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="frame_back_left_short_link">
+        <visual>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x100_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <mass value="0.00009" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="frame_front_left_short_link">
+        <visual>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x100_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <mass value="0.00009" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="frame_back_right_short_link">
+        <visual>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x100_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.05 0" rpy="0 0 0" />
+            <mass value="0.00009" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="frame_front_right_upright_link">
+        <visual>
+            <origin xyz="-0.015 -0.0825 -0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x165_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.015 -0.0825 -0.015" rpy="0 0 0" />
+            <mass value="0.0001485" />
+            <inertia ixx="0.0000003" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000003" />
+        </inertial>
+    </link>
+    <link name="frame_back_left_upright_link">
+        <visual>
+            <origin xyz="0.015 -0.0825 -0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x165_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.015 -0.0825 -0.015" rpy="0 0 0" />
+            <mass value="0.0001485" />
+            <inertia ixx="0.0000003" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000003" />
+        </inertial>
+    </link>
+    <link name="frame_back_right_upright_link">
+        <visual>
+            <origin xyz="0.015 0.0825 -0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x165_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.015 0.0825 -0.015" rpy="0 0 0" />
+            <mass value="0.0001485" />
+            <inertia ixx="0.0000003" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000003" />
+        </inertial>
+    </link>
+    <link name="frame_front_left_upright_link">
+        <visual>
+            <origin xyz="0.015 0.0825 -0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x165_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.015 0.0825 -0.015" rpy="0 0 0" />
+            <mass value="0.0001485" />
+            <inertia ixx="0.0000003" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000003" />
+        </inertial>
+    </link>
+    <link name="frame_front_left_rail_link">
+        <visual>
+            <origin xyz="0.015 0.15 0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x300_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.015 0.15 0.015" rpy="0 0 0" />
+            <mass value="0.00027" />
+            <inertia ixx="0.000002" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.000002" />
+        </inertial>
+    </link>
+    <link name="frame_center_rail_link">
+        <visual>
+            <origin xyz="0 0 -0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x300_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 -0.015" rpy="0 0 0" />
+            <mass value="0.00027" />
+            <inertia ixx="0.000002" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.000002" />
+        </inertial>
+    </link>
+    <link name="frame_front_right_rail_link">
+        <visual>
+            <origin xyz="-0.015 -0.15 0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x300_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.015 -0.15 0.015" rpy="0 0 0" />
+            <mass value="0.00027" />
+            <inertia ixx="0.000002" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.000002" />
+        </inertial>
+    </link>
+    <link name="frame_left_side_rail_link">
+        <visual>
+            <origin xyz="0.015 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x360_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.015 0 0" rpy="0 0 0" />
+            <mass value="0.000324" />
+            <inertia ixx="0.0000035" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000035" />
+        </inertial>
+    </link>
+    <link name="frame_right_side_rail_link">
+        <visual>
+            <origin xyz="-0.015 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x360_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.015 0 0" rpy="0 0 0" />
+            <mass value="0.000324" />
+            <inertia ixx="0.0000035" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.0000035" />
+        </inertial>
+    </link>
+    <link name="frame_spine_link">
+        <visual>
+            <origin xyz="0 0.35 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/frame_3030x700_extrusion.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.35 0" rpy="0 0 0" />
+            <mass value="0.00063" />
+            <inertia ixx="0.0000258" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000258" />
+        </inertial>
+    </link>
+    <link name="frame_assembly_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="frame_rail_assembly_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="chest_base_mount_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="left_wrist_camera_cad_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="right_wrist_camera_cad_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="chest_link">
+        <visual>
+            <origin xyz="0 0.008 -0.22" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/chest_body.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.0143 0.0239" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.054721" length="0.279443" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0000002 0.0157724 0.0016598" rpy="0 0 0" />
+            <mass value="0.0010226" />
+            <inertia ixx="0.0000036" ixy="0" ixz="0" iyy="0.0000035" iyz="0.0000002" izz="0.000002" />
+        </inertial>
+    </link>
+    <link name="left_gripper_palm_link">
+        <visual>
+            <origin xyz="-0.0746747 0.006 -0.0525" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_palm.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.013062 0.0064533 0.0310738" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.012247" length="0.084495" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0095711 0.0058773 0.0093448" rpy="0 0 0" />
+            <mass value="0.0000197" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_palm_link">
+        <visual>
+            <origin xyz="-0.0746747 0.006 -0.0525" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_palm.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.0130339 0.006 0.0268079" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.012247" length="0.084495" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0095711 0.0058773 0.0093448" rpy="0 0 0" />
+            <mass value="0.0000197" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_horn_link">
+        <visual>
+            <origin xyz="-0.424 0.022 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_horn.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0000001 -0.0046562 0" rpy="0 0 0" />
+            <mass value="0.0000053" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_horn_link">
+        <visual>
+            <origin xyz="-0.424 0.022 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_horn.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0000001 -0.0046562 0" rpy="0 0 0" />
+            <mass value="0.0000053" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_elbow_pitch_link">
+        <visual>
+            <origin xyz="0.195742 0.214208 -0.0271" rpy="0 0 0.86488" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_elbow_pitch_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0146726 -0.0332905 -0.013722" rpy="0 0 0.86488" />
+            <mass value="0.0000964" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="left_elbow_pitch_cover_link">
+        <visual>
+            <origin xyz="0.32 0.015 0.02" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_elbow_pitch_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0059985 0.0188732 -0.009753" rpy="0 0 0" />
+            <mass value="0.0000356" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_base_link">
+        <visual>
+            <origin xyz="0.03 -0.0075 -0.05" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_base.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0052682 -0.0064696 -0.0504654" rpy="0 0 0" />
+            <mass value="0.0000374" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_pitch_link">
+        <visual>
+            <origin xyz="0.049 0 0" rpy="-0.299414 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_pitch_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.017422 0.0100505 0.0023346" rpy="-0.299414 0 0" />
+            <mass value="0.0000497" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_pitch_cover_link">
+        <visual>
+            <origin xyz="0.06 0.0156 0.015" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_pitch_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0170333 -0.0083727 0.0176469" rpy="0 0 0" />
+            <mass value="0.0000189" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_roll_cover_link">
+        <visual>
+            <origin xyz="0.136 0.019 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_roll_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0208011 -0.010419 -0.0012894" rpy="0 0 0" />
+            <mass value="0.0000297" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_roll_link">
+        <visual>
+            <origin xyz="-0.0855911 -0.0271 0.0278238" rpy="0 0.314302 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_roll_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0402802 -0.01516 -0.0119022" rpy="0 0.314302 0" />
+            <mass value="0.0000948" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_yaw_cover_link">
+        <visual>
+            <origin xyz="-0.255 0.015 -0.0166" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_yaw_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0016461 0.0166366 0.0067938" rpy="0 0 0" />
+            <mass value="0.0000356" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_yaw_link">
+        <visual>
+            <origin xyz="0.21 0 0" rpy="-0.43982 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_yaw_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0352768 0 -0.0005996" rpy="0 1.5707927 0" />
+            <geometry>
+                <cylinder radius="0.03" length="0.11" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0338829 0.0029572 0.0055402" rpy="-0.43982 0 0" />
+            <mass value="0.0001271" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_yaw_limit_link">
+        <visual>
+            <origin xyz="0.21 -0.0216506 -0.0125" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_yaw_limit.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0016739 0.0020256 -0.0125" rpy="0 0 0" />
+            <mass value="0.0000007" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_roll_motor_link">
+        <visual>
+            <origin xyz="0.49 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_wrist_roll_motor.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.0007464 -0.0010307 -0.0001338" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.026" length="0.045" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0002678 -0.0000451 0.0117721" rpy="0 0 0" />
+            <mass value="0.0000121" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_roll_link">
+        <visual>
+            <origin xyz="0.448586 0.026 0.197157" rpy="0 -0.414095 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_wrist_roll_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0068741 0.026505 -0.0140495" rpy="0 -0.414095 0" />
+            <mass value="0.0000165" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_yaw_link">
+        <visual>
+            <origin xyz="0.353 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_wrist_yaw_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.0297598 0 0" rpy="0 1.5707927 0" />
+            <geometry>
+                <cylinder radius="0.03" length="0.12" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0575364 -0.0092778 -0.0012297" rpy="0 0 0" />
+            <mass value="0.0000992" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000002" iyz="0" izz="0.0000002" />
+        </inertial>
+    </link>
+    <link name="left_wrist_yaw_cover_link">
+        <visual>
+            <origin xyz="0.442 -0.014 0.022" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_wrist_yaw_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0212833 0.0080605 0.021827" rpy="0 0 0" />
+            <mass value="0.0000453" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="body_top_disc_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/body_top_disc.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 -0.0020868 0.0034685" rpy="0 0 0" />
+            <mass value="0.0001606" />
+            <inertia ixx="0.0000003" ixy="0" ixz="0" iyy="0.0000003" iyz="0" izz="0.0000006" />
+        </inertial>
+    </link>
+    <link name="body_top_disc_assembly_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="left_gripper_finger_left_link">
+        <visual>
+            <origin xyz="-0.085 -0.0035 -0.0478" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_left_finger.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.0112 -0.0035 0.0014" rpy="0 0 0" />
+            <geometry>
+                <box size="0.018 0.012 0.005" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.01125 -0.0034914 0.0017499" rpy="0 0 0" />
+            <mass value="0.0000019" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_finger_left_link">
+        <visual>
+            <origin xyz="-0.085 -0.0035 -0.0478" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_left_finger.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.01125 -0.0034914 0.0017499" rpy="0 0 0" />
+            <mass value="0.0000019" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_finger_right_link">
+        <visual>
+            <origin xyz="0.085 -0.0035 -0.0478" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_right_finger.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0112 -0.0035 0.0014" rpy="0 0 0" />
+            <geometry>
+                <box size="0.018 0.012 0.005" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.01125 -0.0034914 0.0017499" rpy="0 0 0" />
+            <mass value="0.0000019" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_finger_right_link">
+        <visual>
+            <origin xyz="0.085 -0.0035 -0.0478" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_right_finger.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.01125 -0.0034914 0.0017499" rpy="0 0 0" />
+            <mass value="0.0000019" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_slider_base_link">
+        <visual>
+            <origin xyz="-0.075 0 -0.0445" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_slider_base.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.075 -0.0000021 0.0023021" rpy="0 0 0" />
+            <mass value="0.0000049" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_slider_base_link">
+        <visual>
+            <origin xyz="-0.075 0 -0.0445" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_slider_base.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.075 -0.0000021 0.0023021" rpy="0 0 0" />
+            <mass value="0.0000049" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_camera_mount_plate_link">
+        <visual>
+            <origin xyz="0 -0.0018787 0.0590503" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_camera_mount_plate.stl" />
+            </geometry>
+            <material name="1.000000_1.000000_1.000000_0.000000_0.000000">
+                <color rgba="1.00000000 1.00000000 1.00000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0000724 0.0032385 0.0281101" rpy="0 0 0" />
+            <mass value="0.0000041" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_rack_mount_link">
+        <visual>
+            <origin xyz="0.0746747 0.006 -0.0525" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_rack_mount.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0137504 0.006 0.0311439" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.012247" length="0.084495" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0095711 0.0058773 0.0093448" rpy="0 0 0" />
+            <mass value="0.0000197" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_rack_mount_link">
+        <visual>
+            <origin xyz="0.0746747 0.006 -0.0525" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_rack_mount.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0131435 0.006 0.0270767" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.012247" length="0.084495" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0095711 0.0058773 0.0093448" rpy="0 0 0" />
+            <mass value="0.0000197" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_camera_mount_link">
+        <visual>
+            <origin xyz="0 0 0.008" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_camera_mount_link.stl" />
+            </geometry>
+            <material name="0.796078_0.823529_0.937255_0.000000_0.000000">
+                <color rgba="0.79607800 0.82352900 0.93725500 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0005744 0.0006466 0.0079149" rpy="0 0 0" />
+            <mass value="0.0000025" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_camera_mount_body_link">
+        <visual>
+            <origin xyz="-0.011 -0.011 -0.01" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_camera_mount_body.stl" />
+            </geometry>
+            <material name="0.796078_0.823529_0.937255_0.000000_0.000000">
+                <color rgba="0.79607800 0.82352900 0.93725500 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.011 -0.011 -0.0048852" rpy="0 0 0" />
+            <geometry>
+                <box size="0.04 0.04 0.01" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.011 -0.011 -0.0066369" rpy="0 0 0" />
+            <mass value="0.000004" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_camera_mount_plate_link">
+        <visual>
+            <origin xyz="0 -0.0018787 0.0590503" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_camera_mount_plate.stl" />
+            </geometry>
+            <material name="1.000000_1.000000_1.000000_0.000000_0.000000">
+                <color rgba="1.00000000 1.00000000 1.00000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0000724 0.0032385 0.0281101" rpy="0 0 0" />
+            <mass value="0.0000041" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_camera_mount_body_link">
+        <visual>
+            <origin xyz="-0.011 -0.011 -0.01" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_camera_mount_body.stl" />
+            </geometry>
+            <material name="0.796078_0.823529_0.937255_0.000000_0.000000">
+                <color rgba="0.79607800 0.82352900 0.93725500 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.011 -0.011 -0.0057113" rpy="0 0 0" />
+            <geometry>
+                <box size="0.04 0.04 0.01" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.011 -0.011 -0.0066369" rpy="0 0 0" />
+            <mass value="0.000004" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_camera_mount_link">
+        <visual>
+            <origin xyz="0 0 0.008" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_camera_mount_link.stl" />
+            </geometry>
+            <material name="0.796078_0.823529_0.937255_0.000000_0.000000">
+                <color rgba="0.79607800 0.82352900 0.93725500 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0005744 0.0006466 0.0079149" rpy="0 0 0" />
+            <mass value="0.0000025" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_upper_rack_link">
+        <visual>
+            <origin xyz="0.0766747 -0.015 -0.043" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_upper_rack.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0352545 -0.0024627 -0.002" rpy="0 0 0" />
+            <mass value="0.000004" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_upper_rack_link">
+        <visual>
+            <origin xyz="0.0766747 -0.015 -0.043" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_upper_rack.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0352545 -0.0024627 -0.002" rpy="0 0 0" />
+            <mass value="0.000004" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_lower_rack_link">
+        <visual>
+            <origin xyz="-0.0766747 0.015 -0.043" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_lower_rack.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0352545 0.0024627 -0.002" rpy="0 0 0" />
+            <mass value="0.000004" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_lower_rack_link">
+        <visual>
+            <origin xyz="-0.0766747 0.015 -0.043" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_lower_rack.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0352545 0.0024627 -0.002" rpy="0 0 0" />
+            <mass value="0.000004" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_rack_base_link">
+        <visual>
+            <origin xyz="-0.0146725 0.0146725 -0.0305" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_rack_base.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0146725 0.0146725 0.00787" rpy="0 0 0" />
+            <mass value="0.0000171" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_rack_base_link">
+        <visual>
+            <origin xyz="-0.0146725 0.0146725 -0.0305" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_rack_base.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.0146725 0.0156648 0.012" rpy="0 1.5707963 0" />
+            <geometry>
+                <cylinder radius="0.005" length="0.19" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0146725 0.0146725 0.00787" rpy="0 0 0" />
+            <mass value="0.0000171" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_gripper_rack_strut_link">
+        <visual>
+            <origin xyz="0 0.02075 -0.0355" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_rack_strut.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.02075 0.0119865" rpy="0 0 0" />
+            <mass value="0.000003" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_rack_strut_link">
+        <visual>
+            <origin xyz="0 0.02075 -0.0355" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_rack_strut.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0.02075 0.0119865" rpy="0 0 0" />
+            <mass value="0.000003" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_elbow_pitch_link">
+        <visual>
+            <origin xyz="-0.290149 0.0036736 -0.0264" rpy="0 0 -0.0471294" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_elbow_pitch_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0340985 -0.0119819 -0.0129345" rpy="0 0 -0.0471294" />
+            <mass value="0.0000971" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="right_elbow_pitch_cover_link">
+        <visual>
+            <origin xyz="-0.32 0.015 0.02" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_elbow_pitch_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0059985 0.0188731 -0.009753" rpy="0 0 0" />
+            <mass value="0.0000356" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_base_link">
+        <visual>
+            <origin xyz="-0.03 0.0173 -0.05" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_base.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0052682 0.0183305 -0.0504654" rpy="0 0 0" />
+            <mass value="0.0000374" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_pitch_link">
+        <visual>
+            <origin xyz="-0.049 0 0" rpy="0.25946 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_pitch_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.017422 0.0072834 0.0073085" rpy="0.25946 0 0" />
+            <mass value="0.0000497" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_pitch_cover_link">
+        <visual>
+            <origin xyz="-0.06 0.0156 -0.018" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_pitch_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0170275 -0.008374 -0.0153495" rpy="0 0 0" />
+            <mass value="0.0000189" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_pitch_aux_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_roll_link">
+        <visual>
+            <origin xyz="-0.0751624 -0.0264 -0.0495036" rpy="0 -0.582412 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_roll_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0354428 -0.0143616 0.0220107" rpy="0 -0.582412 0" />
+            <mass value="0.0000954" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_roll_cover_link">
+        <visual>
+            <origin xyz="-0.136 0.019 -0.02" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_roll_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0207914 -0.0104138 -0.0212819" rpy="0 0 0" />
+            <mass value="0.0000298" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_yaw_link">
+        <visual>
+            <origin xyz="-0.21 0 0" rpy="-1.55277 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_yaw_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.0324783 0 0.0000728" rpy="0 1.5707927 0" />
+            <geometry>
+                <cylinder radius="0.03" length="0.11" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0338839 0.0062782 -0.0002046" rpy="-1.55277 0 0" />
+            <mass value="0.0001271" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_yaw_cover_link">
+        <visual>
+            <origin xyz="-0.255 0.015 0.0166" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_yaw_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0016462 0.0166366 -0.0067938" rpy="0 0 0" />
+            <mass value="0.0000356" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_yaw_limit_link">
+        <visual>
+            <origin xyz="-0.21 -0.0216506 -0.0125" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_yaw_limit.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0016739 0.0020256 -0.0125" rpy="0 0 0" />
+            <mass value="0.0000007" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_yaw_aux_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="left_wrist_pitch_cover_link">
+        <visual>
+            <origin xyz="-0.528 0.01 0.026" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_pitch_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0179781 0.01 -0.0032917" rpy="0 0 0" />
+            <mass value="0.0000076" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_pitch_cover_link">
+        <visual>
+            <origin xyz="-0.528 -0.01 0.026" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_pitch_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0179781 -0.01 -0.0032917" rpy="0 0 0" />
+            <mass value="0.0000076" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_pitch_link">
+        <visual>
+            <origin xyz="-0.366515 0.325218 -0.0225" rpy="0 0 -0.725768" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_pitch_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.023173 -0.0205664 -0.0112555" rpy="0 0 -0.725768" />
+            <mass value="0.0000274" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_pitch_link">
+        <visual>
+            <origin xyz="-0.452542 0.187898 -0.0225" rpy="0 0 -0.393547" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/wrist_pitch_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0286135 -0.0118841 -0.0112555" rpy="0 0 -0.393547" />
+            <mass value="0.0000274" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_roll_motor_link">
+        <visual>
+            <origin xyz="-0.488647 0.026 0.0363837" rpy="0 0.0743208 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_wrist_roll_motor.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0012916 0.0269225 -0.000746" rpy="0 0.0743208 0" />
+            <geometry>
+                <cylinder radius="0.026" length="0.045002" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0006071 0.0259549 0.0117595" rpy="0 0.0743208 0" />
+            <mass value="0.0000121" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_roll_link">
+        <visual>
+            <origin xyz="-0.49 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_wrist_roll_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0006123 0.0005255 -0.0155891" rpy="0 0 0" />
+            <mass value="0.0000164" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_wrist_yaw_link">
+        <visual>
+            <origin xyz="-0.353 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_wrist_yaw_link.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.033256 0 0" rpy="0 1.5707927 0" />
+            <geometry>
+                <cylinder radius="0.03" length="0.12" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0576092 -0.0092758 -0.001159" rpy="0 0 0" />
+            <mass value="0.0000996" />
+            <inertia ixx="0.0000001" ixy="0" ixz="0" iyy="0.0000002" iyz="0" izz="0.0000002" />
+        </inertial>
+    </link>
+    <link name="right_wrist_yaw_cover_link">
+        <visual>
+            <origin xyz="-0.442 -0.014 0.022" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_wrist_yaw_cover.stl" />
+            </geometry>
+            <material name="0.400000_0.400000_0.400000_0.000000_0.000000">
+                <color rgba="0.40000000 0.40000000 0.40000000 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0212832 0.0080605 0.021827" rpy="0 0 0" />
+            <mass value="0.0000453" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0.0000001" iyz="0" izz="0.0000001" />
+        </inertial>
+    </link>
+    <link name="world_root">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="left_gripper_actuator_link">
+        <visual>
+            <origin xyz="0.0097701 0.0165864 0.0135" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0097701 0.0165864 0.0235" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.023" length="0.04" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0097536 0.0166305 0.0217868" rpy="0 0 0" />
+            <mass value="0.0000692" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_gripper_actuator_link">
+        <visual>
+            <origin xyz="0 0 0.0135" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/gripper_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.0235" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.023" length="0.04" />
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.0000166 0.0000441 0.0217868" rpy="0 0 0" />
+            <mass value="0.0000692" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_elbow_actuator_link">
+        <visual>
+            <origin xyz="0 0 0.005" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/joint_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0002108 0.0003763 0.0219363" rpy="0 0 0" />
+            <mass value="0.0000408" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_roll_actuator_link">
+        <visual>
+            <origin xyz="-0.013435 -0.013435 -0.046" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/joint_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0136458 -0.0130587 -0.0290637" rpy="0 0 0" />
+            <mass value="0.0000408" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="right_shoulder_yaw_actuator_link">
+        <visual>
+            <origin xyz="0 0 -0.046" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/joint_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0002108 0.0003763 -0.0290637" rpy="0 0 0" />
+            <mass value="0.0000408" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_elbow_actuator_link">
+        <visual>
+            <origin xyz="0 0 0.005" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/joint_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0002108 0.0003763 0.0219363" rpy="0 0 0" />
+            <mass value="0.0000408" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_roll_actuator_link">
+        <visual>
+            <origin xyz="0 0 0.005" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/joint_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="-0.0002108 0.0003763 0.0219363" rpy="0 0 0" />
+            <mass value="0.0000408" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_shoulder_yaw_actuator_link">
+        <visual>
+            <origin xyz="0.013435 -0.013435 -0.046" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/joint_actuator.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.0132242 -0.0130587 -0.0290637" rpy="0 0 0" />
+            <mass value="0.0000408" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="base_support_beam_link">
+        <visual>
+            <origin xyz="0 0 0.207" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/base_support_beam.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0.2535" rpy="0 0 0" />
+            <mass value="0.0001586" />
+            <inertia ixx="0.0000034" ixy="0" ixz="0" iyy="0.0000034" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="left_wrist_breakout_board_link">
+        <visual>
+            <origin xyz="0.01115 0.01265 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_wrist_breakout_board.stl" />
+            </geometry>
+            <material name="0.196078_0.196078_0.196078_0.000000_0.000000">
+                <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0.01115 0.01265 0.0045266" rpy="0 0 0" />
+            <mass value="0.0000051" />
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+        </inertial>
+    </link>
+    <link name="chest_connector_left_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="chest_connector_right_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="head_camera_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="head_camera_optical_frame">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="left_wrist_camera_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="left_wrist_camera_optical_frame">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="right_wrist_camera_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <link name="right_wrist_camera_optical_frame">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1e-9" />
+            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
+        </inertial>
+    </link>
+    <joint name="world_root_to_base_vertical_joint" type="fixed">
+        <parent link="world_root" />
+        <child link="base_vertical_link" />
+        <origin xyz="-0.002642 0.048 0.375" rpy="0 0 0" />
+    </joint>
+    <joint name="frame_assembly_to_frame_rail_assembly_joint" type="fixed">
+        <parent link="frame_assembly_link" />
+        <child link="frame_rail_assembly_link" />
+        <origin xyz="0.162358 0.153 0.048" rpy="1.5708 0 3.14159" />
+    </joint>
+    <joint name="right_wrist_pitch_joint" type="revolute">
+        <parent link="right_wrist_roll_aux_motor_link" />
+        <child link="right_wrist_pitch_link" />
+        <origin xyz="0 0 0" rpy="0 1.5708 -4.71239" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.03932" upper="0.531478" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_shoulder_yaw_joint" type="revolute">
+        <parent link="left_shoulder_yaw_actuator_link" />
+        <child link="left_shoulder_yaw_link" />
+        <origin xyz="0.013435 -0.013435 -0.052" rpy="0 -1.5708 4.71239" />
+        <axis xyz="1 0 0" />
+        <limit lower="-1.13098" upper="2.01062" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_shoulder_roll_joint" type="revolute">
+        <parent link="right_shoulder_roll_actuator_link" />
+        <child link="right_shoulder_roll_link" />
+        <origin xyz="-0.013435 -0.013435 -0.052" rpy="-1.5708 0 3.14159" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-0.756945" upper="2.73371" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_shoulder_pitch_joint" type="revolute">
+        <parent link="right_shoulder_pitch_motor_link" />
+        <child link="right_shoulder_pitch_link" />
+        <origin xyz="0 0 -0.004" rpy="0 1.5708 1.5708" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-2.72505" upper="1.20194" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_elbow_pitch_joint" type="revolute">
+        <parent link="left_elbow_actuator_link" />
+        <child link="left_elbow_pitch_link" />
+        <origin xyz="0 0 -0.001" rpy="-3.14159 0 3.14159" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-0.182318" upper="2.17388" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_shoulder_pitch_joint" type="revolute">
+        <parent link="left_shoulder_pitch_motor_link" />
+        <child link="left_shoulder_pitch_link" />
+        <origin xyz="0 0 -0.004" rpy="0 -1.5708 4.71239" />
+        <axis xyz="1 0 0" />
+        <limit lower="-1.8997" upper="2.02729" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_shoulder_yaw_joint" type="revolute">
+        <parent link="right_shoulder_yaw_actuator_link" />
+        <child link="right_shoulder_yaw_link" />
+        <origin xyz="0 0 -0.052" rpy="0 1.5708 -1.5708" />
+        <axis xyz="-1 0 0" />
+        <limit lower="-3.12357" upper="0.0180244" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_wrist_pitch_joint" type="revolute">
+        <parent link="left_wrist_roll_aux_motor_link" />
+        <child link="left_wrist_pitch_link" />
+        <origin xyz="0 0 0" rpy="0 1.5708 1.5708" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.24937" upper="0.32143" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_shoulder_roll_joint" type="revolute">
+        <parent link="left_shoulder_roll_actuator_link" />
+        <child link="left_shoulder_roll_link" />
+        <origin xyz="0 0 -0.001" rpy="-1.5708 0 3.14159" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-3.00182" upper="0.488835" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_elbow_pitch_joint" type="revolute">
+        <parent link="right_elbow_actuator_link" />
+        <child link="right_elbow_pitch_link" />
+        <origin xyz="0 0 -0.001" rpy="3.14159 0 -1.5708" />
+        <axis xyz="0 0 -1" />
+        <limit lower="-1.87973" upper="0.476469" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_wrist_yaw_joint" type="revolute">
+        <parent link="left_elbow_pitch_link" />
+        <child link="left_wrist_yaw_motor_link" />
+        <origin xyz="-0.0339087 -0.0551924 -0.0271" rpy="3.14159 0.101359 2.43568" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.04023" upper="0.101359" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_wrist_yaw_joint" type="revolute">
+        <parent link="right_elbow_pitch_link" />
+        <child link="right_wrist_yaw_motor_link" />
+        <origin xyz="0.0634578 -0.0130041 -0.0264" rpy="3.14159 1.01388 -1.61793" />
+        <axis xyz="0 1 0" />
+        <limit lower="-0.556921" upper="2.58467" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_wrist_roll_joint" type="revolute">
+        <parent link="left_wrist_yaw_link" />
+        <child link="left_wrist_roll_link" />
+        <origin xyz="-0.137 -0.026 0" rpy="0 0 0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-1.11223" upper="0.284037" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_wrist_roll_joint" type="revolute">
+        <parent link="right_wrist_yaw_link" />
+        <child link="right_wrist_roll_motor_link" />
+        <origin xyz="0.137 -0.026 0" rpy="0 0 0" />
+        <axis xyz="0 -1 0" />
+        <limit lower="-0.623811" upper="0.772453" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_gripper_left_finger_joint" type="prismatic">
+        <parent link="right_gripper_slider_base_link" />
+        <child link="right_gripper_finger_left_link" />
+        <origin xyz="-0.0397241 0.0035 0.0033" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="left_gripper_left_finger_joint" type="prismatic">
+        <parent link="left_gripper_slider_base_link" />
+        <child link="left_gripper_finger_left_link" />
+        <origin xyz="-0.0384585 0.0035 0.0033" rpy="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+    </joint>
+    <joint name="right_gripper_right_finger_joint" type="prismatic">
+        <parent link="right_gripper_slider_base_link" />
+        <child link="right_gripper_finger_right_link" />
+        <origin xyz="-0.11025 0.0035 0.0033" rpy="0 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="0" upper="0.047" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+        <mimic joint="right_gripper_left_finger_joint" multiplier="1" offset="0" />
+    </joint>
+    <joint name="left_gripper_right_finger_joint" type="prismatic">
+        <parent link="left_gripper_slider_base_link" />
+        <child link="left_gripper_finger_right_link" />
+        <origin xyz="-0.11025 0.0035 0.0033" rpy="0 0 0" />
+        <axis xyz="-1 0 0" />
+        <limit lower="0" upper="0.047" effort="1" velocity="1" />
+        <hardware>
+            <motorType>None</motorType>
+            <motorDirection>1</motorDirection>
+            <armature>0</armature>
+        </hardware>
+        <mimic joint="left_gripper_left_finger_joint" multiplier="1" offset="0" />
+    </joint>
+    <joint name="fixed_1_joint" type="fixed">
+        <parent link="right_wrist_pitch_link" />
+        <child link="right_wrist_pitch_cover_link" />
+        <origin xyz="0.0389297 -0.0053362 -0.0485" rpy="0 0 -0.393547" />
+    </joint>
+    <joint name="fixed_10_joint" type="fixed">
+        <parent link="frame_back_left_short_link" />
+        <child link="frame_back_left_upright_link" />
+        <origin xyz="0.015 0.1 0.015" rpy="0 1.5708 -1.5708" />
+    </joint>
+    <joint name="fixed_11_joint" type="fixed">
+        <parent link="frame_front_right_short_link" />
+        <child link="frame_front_right_upright_link" />
+        <origin xyz="0.015 0.1 -0.015" rpy="0 1.5708 4.71239" />
+    </joint>
+    <joint name="fixed_12_joint" type="fixed">
+        <parent link="frame_back_right_short_link" />
+        <child link="frame_back_right_upright_link" />
+        <origin xyz="-0.015 0.1 0.015" rpy="0 1.5708 -1.5708" />
+    </joint>
+    <joint name="fixed_13_joint" type="fixed">
+        <parent link="frame_front_left_short_link" />
+        <child link="frame_front_left_upright_link" />
+        <origin xyz="-0.015 0.1 0.015" rpy="0 1.5708 4.71239" />
+    </joint>
+    <joint name="fixed_14_joint" type="fixed">
+        <parent link="frame_center_rail_link" />
+        <child link="body_rear_panel_link" />
+        <origin xyz="0 0 0" rpy="1.5708 0 -3.14159" />
+    </joint>
+    <joint name="fixed_1_1_joint" type="fixed">
+        <parent link="right_gripper_actuator_link" />
+        <child link="right_gripper_rack_base_link" />
+        <origin xyz="0.0146725 -0.0146725 0.044" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_10_joint" type="fixed">
+        <parent link="left_wrist_yaw_link" />
+        <child link="left_wrist_breakout_board_link" />
+        <origin xyz="-0.0778 0.0045 0.0265352" rpy="0 0 -1.5708" />
+    </joint>
+    <joint name="fixed_1_11_joint" type="fixed">
+        <parent link="left_wrist_yaw_link" />
+        <child link="left_wrist_yaw_cover_link" />
+        <origin xyz="-0.089 0.014 -0.022" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_12_joint" type="fixed">
+        <parent link="left_shoulder_yaw_link" />
+        <child link="left_shoulder_yaw_cover_link" />
+        <origin xyz="-0.045 -0.0206403 -0.0086335" rpy="-2.70177 0 -3.14159" />
+    </joint>
+    <joint name="fixed_1_13_joint" type="fixed">
+        <parent link="right_wrist_roll_motor_link" />
+        <child link="right_wrist_roll_link" />
+        <origin xyz="0 0.026 0" rpy="0 0.0743208 0" />
+    </joint>
+    <joint name="fixed_1_14_joint" type="fixed">
+        <parent link="right_shoulder_roll_link" />
+        <child link="right_shoulder_yaw_actuator_link" />
+        <origin xyz="0.0574575 -0.0264 0.0378428" rpy="-2.15321 0 1.5708" />
+    </joint>
+    <joint name="fixed_1_15_joint" type="fixed">
+        <parent link="right_shoulder_yaw_link" />
+        <child link="right_shoulder_yaw_cover_link" />
+        <origin xyz="0.045 -0.0168677 0.0146984" rpy="-1.55277 0 0" />
+    </joint>
+    <joint name="fixed_1_16_joint" type="fixed">
+        <parent link="right_shoulder_pitch_link" />
+        <child link="right_shoulder_pitch_aux_link" />
+        <origin xyz="0.001 0.0073605 0.0128704" rpy="1.5708 1.31134 1.5708" />
+    </joint>
+    <joint name="fixed_1_17_joint" type="fixed">
+        <parent link="right_wrist_yaw_link" />
+        <child link="right_wrist_yaw_cover_link" />
+        <origin xyz="0.089 0.014 -0.022" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_18_joint" type="fixed">
+        <parent link="right_elbow_pitch_link" />
+        <child link="right_elbow_pitch_cover_link" />
+        <origin xyz="0.0287889 -0.0263856 -0.0464" rpy="0 0 -0.0471294" />
+    </joint>
+    <joint name="fixed_1_19_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="chest_base_mount_link" />
+        <origin xyz="0.0000004 0.0146056 -0.0771964" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_2_joint" type="fixed">
+        <parent link="right_wrist_camera_mount_body_link" />
+        <child link="right_wrist_camera_cad_link" />
+        <origin xyz="-0.011 -0.011 -0.01" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_20_joint" type="fixed">
+        <parent link="frame_spine_link" />
+        <child link="chest_link" />
+        <origin xyz="0 0.7 0" rpy="1.5708 0 3.14159" />
+    </joint>
+    <joint name="fixed_1_21_joint" type="fixed">
+        <parent link="left_gripper_actuator_link" />
+        <child link="left_gripper_rack_base_link" />
+        <origin xyz="0.0244426 0.0019139 0.044" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_22_joint" type="fixed">
+        <parent link="left_wrist_camera_mount_body_link" />
+        <child link="left_wrist_camera_cad_link" />
+        <origin xyz="-0.011 -0.011 -0.01" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_23_joint" type="fixed">
+        <parent link="left_wrist_pitch_link" />
+        <child link="left_wrist_pitch_cover_link" />
+        <origin xyz="0.0217865 -0.0327009 -0.0485" rpy="0 0 -0.725768" />
+    </joint>
+    <joint name="fixed_1_3_joint" type="fixed">
+        <parent link="body_top_plate_link" />
+        <child link="body_top_disc_assembly_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_1_4_joint" type="fixed">
+        <parent link="base_support_link" />
+        <child link="frame_assembly_link" />
+        <origin xyz="0 0 -0.217" rpy="-1.5708 0 3.14159" />
+    </joint>
+    <joint name="fixed_1_5_joint" type="fixed">
+        <parent link="frame_center_rail_link" />
+        <child link="frame_spine_link" />
+        <origin xyz="0 0 -0.03" rpy="-1.5708 0 -1.5708" />
+    </joint>
+    <joint name="fixed_1_6_joint" type="fixed">
+        <parent link="left_wrist_roll_link" />
+        <child link="left_wrist_roll_motor_link" />
+        <origin xyz="0 0.026 0" rpy="0 -0.414095 0" />
+    </joint>
+    <joint name="fixed_1_7_joint" type="fixed">
+        <parent link="left_elbow_pitch_link" />
+        <child link="left_elbow_pitch_cover_link" />
+        <origin xyz="-0.0004365 -0.0390488 -0.0471" rpy="0 0 0.86488" />
+    </joint>
+    <joint name="fixed_1_8_joint" type="fixed">
+        <parent link="left_shoulder_yaw_actuator_link" />
+        <child link="left_shoulder_yaw_limit_link" />
+        <origin xyz="0.000935 0.0082156 -0.051" rpy="0 -1.5708 0" />
+    </joint>
+    <joint name="fixed_1_9_joint" type="fixed">
+        <parent link="left_shoulder_pitch_link" />
+        <child link="left_shoulder_roll_actuator_link" />
+        <origin xyz="-0.041 0.0246999 -0.0076247" rpy="0 -1.27138 1.5708" />
+    </joint>
+    <joint name="fixed_2_joint" type="fixed">
+        <parent link="right_gripper_rack_base_link" />
+        <child link="right_gripper_rack_strut_link" />
+        <origin xyz="-0.0146725 -0.0060775 0.005" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_2_1_joint" type="fixed">
+        <parent link="right_wrist_pitch_link" />
+        <child link="right_gripper_actuator_link" />
+        <origin xyz="0.0434071 -0.0180229 -0.0186048" rpy="1.5708 -0.0698132 1.17725" />
+    </joint>
+    <joint name="fixed_2_10_joint" type="fixed">
+        <parent link="left_wrist_yaw_motor_link" />
+        <child link="left_wrist_yaw_link" />
+        <origin xyz="0 0 0" rpy="3.14159 0 1.5708" />
+    </joint>
+    <joint name="fixed_2_11_joint" type="fixed">
+        <parent link="left_shoulder_yaw_link" />
+        <child link="left_elbow_actuator_link" />
+        <origin xyz="-0.08 0.0200546 0.0191321" rpy="-2.91052 0.377646 2.13874" />
+    </joint>
+    <joint name="fixed_2_12_joint" type="fixed">
+        <parent link="right_wrist_roll_motor_link" />
+        <child link="right_wrist_roll_aux_motor_link" />
+        <origin xyz="0.0016707 0.026 0.0224379" rpy="1.4972 0.0103341 -1.43155" />
+    </joint>
+    <joint name="fixed_2_13_joint" type="fixed">
+        <parent link="right_shoulder_yaw_actuator_link" />
+        <child link="right_shoulder_yaw_limit_link" />
+        <origin xyz="-0.0125 -0.0216506 -0.051" rpy="0 1.5708 3.14159" />
+    </joint>
+    <joint name="fixed_2_14_joint" type="fixed">
+        <parent link="right_shoulder_yaw_link" />
+        <child link="right_shoulder_yaw_aux_link" />
+        <origin xyz="0 0.0002433 -0.0134978" rpy="-1.5708 -0.0180244 1.5708" />
+    </joint>
+    <joint name="fixed_2_15_joint" type="fixed">
+        <parent link="right_shoulder_pitch_cover_link" />
+        <child link="right_shoulder_roll_actuator_link" />
+        <origin xyz="0.016565 -0.01025 -0.004565" rpy="0 -1.5708 1.5708" />
+    </joint>
+    <joint name="fixed_2_16_joint" type="fixed">
+        <parent link="right_wrist_yaw_link" />
+        <child link="right_wrist_yaw_aux_motor_link" />
+        <origin xyz="0.071 -0.022 0" rpy="0 -1.5708 3.14159" />
+    </joint>
+    <joint name="fixed_2_17_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="right_shoulder_base_link" />
+        <origin xyz="0.0222304 -0.0095 0.108821" rpy="-0.0000001 -0.174533 0" />
+    </joint>
+    <joint name="fixed_2_18_joint" type="fixed">
+        <parent link="left_gripper_rack_base_link" />
+        <child link="left_gripper_rack_strut_link" />
+        <origin xyz="-0.0146725 -0.0060775 0.005" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_2_19_joint" type="fixed">
+        <parent link="left_wrist_pitch_link" />
+        <child link="left_gripper_actuator_link" />
+        <origin xyz="0.0293668 -0.0377181 -0.0357656" rpy="1.5708 -0.0698132 0.845028" />
+    </joint>
+    <joint name="fixed_2_2_joint" type="fixed">
+        <parent link="right_wrist_camera_mount_link" />
+        <child link="right_wrist_camera_mount_body_link" />
+        <origin xyz="-0.011 0.011 0.008" rpy="-3.14159 0 -3.14159" />
+    </joint>
+    <joint name="fixed_2_20_joint" type="fixed">
+        <parent link="left_wrist_camera_mount_link" />
+        <child link="left_wrist_camera_mount_body_link" />
+        <origin xyz="-0.011 0.011 0.008" rpy="3.14159 0 -3.14159" />
+    </joint>
+    <joint name="fixed_2_3_joint" type="fixed">
+        <parent link="body_top_plate_link" />
+        <child link="body_front_plate_link" />
+        <origin xyz="0.0686 0.1622 0.0315" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_2_4_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="body_top_plate_link" />
+        <origin xyz="0.0000018 -0.0019876 0.125" rpy="1.5708 0 0" />
+    </joint>
+    <joint name="fixed_2_5_joint" type="fixed">
+        <parent link="base_support_link" />
+        <child link="base_support_beam_link" />
+        <origin xyz="0 0 -0.217" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_2_6_joint" type="fixed">
+        <parent link="frame_center_rail_link" />
+        <child link="frame_left_side_rail_link" />
+        <origin xyz="0 -0.15 -0.015" rpy="0 0 -1.5708" />
+    </joint>
+    <joint name="fixed_2_7_joint" type="fixed">
+        <parent link="left_wrist_roll_motor_link" />
+        <child link="left_wrist_roll_aux_motor_link" />
+        <origin xyz="0 0 0.0225" rpy="1.5708 0 1.8326" />
+    </joint>
+    <joint name="fixed_2_8_joint" type="fixed">
+        <parent link="left_shoulder_roll_link" />
+        <child link="left_shoulder_yaw_actuator_link" />
+        <origin xyz="0.0612762 -0.040535 -0.0340466" rpy="-1.25649 0 1.5708" />
+    </joint>
+    <joint name="fixed_2_9_joint" type="fixed">
+        <parent link="left_shoulder_pitch_link" />
+        <child link="left_shoulder_pitch_cover_link" />
+        <origin xyz="-0.011 -0.0193304 -0.0097313" rpy="-0.299414 0 0" />
+    </joint>
+    <joint name="fixed_3_joint" type="fixed">
+        <parent link="right_gripper_rack_base_link" />
+        <child link="right_gripper_slider_base_link" />
+        <origin xyz="0.0603275 0.0146725 0.014" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_3_1_joint" type="fixed">
+        <parent link="right_wrist_camera_mount_plate_link" />
+        <child link="right_wrist_camera_mount_link" />
+        <origin xyz="0 0.0095213 0.0590503" rpy="-1.5708 0 0" />
+    </joint>
+    <joint name="fixed_3_10_joint" type="fixed">
+        <parent link="right_shoulder_pitch_link" />
+        <child link="right_shoulder_pitch_cover_link" />
+        <origin xyz="0.011 -0.0196959 0.0133952" rpy="0.25946 0 0" />
+    </joint>
+    <joint name="fixed_3_11_joint" type="fixed">
+        <parent link="right_wrist_yaw_motor_link" />
+        <child link="right_wrist_yaw_link" />
+        <origin xyz="0 0 0" rpy="1.5708 0 -1.5708" />
+    </joint>
+    <joint name="fixed_3_12_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="left_shoulder_base_link" />
+        <origin xyz="-0.0222304 0.0155 0.108821" rpy="-0.0000001 0.174533 0" />
+    </joint>
+    <joint name="fixed_3_13_joint" type="fixed">
+        <parent link="left_gripper_rack_base_link" />
+        <child link="left_gripper_slider_base_link" />
+        <origin xyz="0.0603275 0.0146725 0.014" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_3_14_joint" type="fixed">
+        <parent link="left_wrist_camera_mount_plate_link" />
+        <child link="left_wrist_camera_mount_link" />
+        <origin xyz="0 0.0095213 0.0590503" rpy="-1.5708 0 0" />
+    </joint>
+    <joint name="fixed_3_2_joint" type="fixed">
+        <parent link="body_top_plate_link" />
+        <child link="body_top_disc_link" />
+        <origin xyz="0 0.0936 -0.0485" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_3_3_joint" type="fixed">
+        <parent link="base_vertical_link" />
+        <child link="base_support_link" />
+        <origin xyz="0 0 0.01" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_3_4_joint" type="fixed">
+        <parent link="world_root" />
+        <child link="frame_center_rail_link" />
+        <origin xyz="0 0 0" rpy="-3.14159 0 -1.5708" />
+    </joint>
+    <joint name="fixed_3_5_joint" type="fixed">
+        <parent link="frame_center_rail_link" />
+        <child link="frame_right_side_rail_link" />
+        <origin xyz="0 0.15 -0.015" rpy="0 0 -1.5708" />
+    </joint>
+    <joint name="fixed_3_6_joint" type="fixed">
+        <parent link="left_shoulder_roll_link" />
+        <child link="left_shoulder_roll_cover_link" />
+        <origin xyz="0.0437466 -0.0461 -0.014221" rpy="-3.14159 -0.314302 3.14159" />
+    </joint>
+    <joint name="fixed_3_7_joint" type="fixed">
+        <parent link="left_wrist_yaw_link" />
+        <child link="left_wrist_yaw_aux_motor_link" />
+        <origin xyz="-0.071 -0.022 0" rpy="0 1.5708 3.14159" />
+    </joint>
+    <joint name="fixed_3_8_joint" type="fixed">
+        <parent link="right_shoulder_roll_link" />
+        <child link="right_shoulder_roll_cover_link" />
+        <origin xyz="0.0274156 -0.0454 0.0420046" rpy="0 -0.582412 0" />
+    </joint>
+    <joint name="fixed_3_9_joint" type="fixed">
+        <parent link="right_shoulder_yaw_link" />
+        <child link="right_elbow_actuator_link" />
+        <origin xyz="0.08 0.026026 -0.0095325" rpy="1.60683 -1.04692 -0.0312074" />
+    </joint>
+    <joint name="fixed_4_joint" type="fixed">
+        <parent link="right_gripper_finger_right_link" />
+        <child link="right_gripper_rack_mount_link" />
+        <origin xyz="0.00725 -0.0095 0.0047" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_4_1_joint" type="fixed">
+        <parent link="frame_right_side_rail_link" />
+        <child link="frame_front_right_rail_link" />
+        <origin xyz="0 0.18 -0.015" rpy="0 0 1.5708" />
+    </joint>
+    <joint name="fixed_4_2_joint" type="fixed">
+        <parent link="left_wrist_yaw_aux_motor_link" />
+        <child link="left_wrist_horn_link" />
+        <origin xyz="0 0 0" rpy="0 -1.5708 3.14159" />
+    </joint>
+    <joint name="fixed_4_3_joint" type="fixed">
+        <parent link="right_wrist_yaw_aux_motor_link" />
+        <child link="right_wrist_horn_link" />
+        <origin xyz="0 0 0" rpy="0 -1.5708 3.14159" />
+    </joint>
+    <joint name="fixed_4_4_joint" type="fixed">
+        <parent link="right_shoulder_base_link" />
+        <child link="right_shoulder_pitch_motor_link" />
+        <origin xyz="0.015 0.0173 -0.05" rpy="1.5708 0.15708 -1.5708" />
+    </joint>
+    <joint name="fixed_4_5_joint" type="fixed">
+        <parent link="left_gripper_finger_right_link" />
+        <child link="left_gripper_rack_mount_link" />
+        <origin xyz="0.00725 -0.0095 0.0047" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_5_joint" type="fixed">
+        <parent link="right_gripper_rack_mount_link" />
+        <child link="right_gripper_upper_rack_link" />
+        <origin xyz="-0.002 0.021 -0.0095" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_5_1_joint" type="fixed">
+        <parent link="frame_left_side_rail_link" />
+        <child link="frame_front_left_rail_link" />
+        <origin xyz="0 -0.18 -0.015" rpy="0 0 1.5708" />
+    </joint>
+    <joint name="fixed_5_2_joint" type="fixed">
+        <parent link="left_shoulder_base_link" />
+        <child link="left_shoulder_pitch_motor_link" />
+        <origin xyz="-0.015 -0.0075 -0.05" rpy="1.5708 -1.41372 1.5708" />
+    </joint>
+    <joint name="fixed_5_3_joint" type="fixed">
+        <parent link="left_gripper_rack_mount_link" />
+        <child link="left_gripper_upper_rack_link" />
+        <origin xyz="-0.002 0.021 -0.0095" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_6_joint" type="fixed">
+        <parent link="right_gripper_finger_left_link" />
+        <child link="right_gripper_palm_link" />
+        <origin xyz="-0.00725 -0.0095 0.0047" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_6_1_joint" type="fixed">
+        <parent link="frame_right_side_rail_link" />
+        <child link="frame_back_right_short_link" />
+        <origin xyz="-0.015 0 -0.015" rpy="-1.5708 0 0" />
+    </joint>
+    <joint name="fixed_6_2_joint" type="fixed">
+        <parent link="left_gripper_finger_left_link" />
+        <child link="left_gripper_palm_link" />
+        <origin xyz="-0.00725 -0.0095 0.0047" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_7_joint" type="fixed">
+        <parent link="right_gripper_palm_link" />
+        <child link="right_gripper_lower_rack_link" />
+        <origin xyz="0.002 -0.009 -0.0095" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_7_1_joint" type="fixed">
+        <parent link="frame_front_left_rail_link" />
+        <child link="frame_front_left_short_link" />
+        <origin xyz="0.015 0.15 0" rpy="-1.5708 0 0" />
+    </joint>
+    <joint name="fixed_7_2_joint" type="fixed">
+        <parent link="left_gripper_palm_link" />
+        <child link="left_gripper_lower_rack_link" />
+        <origin xyz="0.002 -0.009 -0.0095" rpy="0 0 0" />
+    </joint>
+    <joint name="fixed_8_joint" type="fixed">
+        <parent link="right_gripper_rack_strut_link" />
+        <child link="right_wrist_camera_mount_plate_link" />
+        <origin xyz="0 0.0415 0.0110147" rpy="0.785398 0 3.14159" />
+    </joint>
+    <joint name="fixed_8_1_joint" type="fixed">
+        <parent link="frame_left_side_rail_link" />
+        <child link="frame_back_left_short_link" />
+        <origin xyz="0.015 0 -0.015" rpy="-1.5708 0 0" />
+    </joint>
+    <joint name="fixed_8_2_joint" type="fixed">
+        <parent link="left_gripper_rack_strut_link" />
+        <child link="left_wrist_camera_mount_plate_link" />
+        <origin xyz="0 0.0415 0.0110147" rpy="0.785398 0 3.14159" />
+    </joint>
+    <joint name="fixed_9_joint" type="fixed">
+        <parent link="frame_front_right_rail_link" />
+        <child link="frame_front_right_short_link" />
+        <origin xyz="-0.015 -0.15 0" rpy="-1.5708 0 0" />
+    </joint>
+    <joint name="chest_connector_left_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="chest_connector_left_link" />
+        <origin xyz="0.0395918 0.0075 -0.499662" rpy="-1.5708 0 3.14159" />
+    </joint>
+    <joint name="chest_connector_right_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="chest_connector_right_link" />
+        <origin xyz="0.0222177 0.0175 -0.40119" rpy="-1.5708 0 3.14159" />
+    </joint>
+    <joint name="head_camera_joint" type="fixed">
+        <parent link="chest_link" />
+        <child link="head_camera_link" />
+        <origin xyz="0 0.10828 0.28" rpy="0 0.7853982 1.5707963" />
+    </joint>
+    <joint name="head_camera_optical_joint" type="fixed">
+        <parent link="head_camera_link" />
+        <child link="head_camera_optical_frame" />
+        <origin xyz="0 0 0" rpy="-1.5707963 0 -1.5707963" />
+    </joint>
+    <joint name="left_wrist_camera_joint" type="fixed">
+        <parent link="left_wrist_camera_cad_link" />
+        <child link="left_wrist_camera_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    <joint name="left_wrist_camera_optical_joint" type="fixed">
+        <parent link="left_wrist_camera_link" />
+        <child link="left_wrist_camera_optical_frame" />
+        <origin xyz="0 0 0" rpy="-1.5707963 0 -1.5707963" />
+    </joint>
+    <joint name="right_wrist_camera_joint" type="fixed">
+        <parent link="right_wrist_camera_cad_link" />
+        <child link="right_wrist_camera_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    <joint name="right_wrist_camera_optical_joint" type="fixed">
+        <parent link="right_wrist_camera_link" />
+        <child link="right_wrist_camera_optical_frame" />
+        <origin xyz="0 0 0" rpy="-1.5707963 0 -1.5707963" />
+    </joint>
+</robot>
