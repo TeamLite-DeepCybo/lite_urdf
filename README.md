@@ -13,16 +13,14 @@ This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot w
 
 - Camera frames are included:
   - `head_camera_link`
-  - `head_camera_optical_frame`
   - `left_wrist_camera_link`
-  - `left_wrist_camera_optical_frame`
   - `right_wrist_camera_link`
-  - `right_wrist_camera_optical_frame`
-- Gripper tip midpoint frames are included:
+- Gripper tip midpoint endpoint frames are included:
   - `left_gripper_tip_middle_link`
   - `right_gripper_tip_middle_link`
-  - both are fixed to their gripper slider base at the centered fingertip x/y
-    position with local `z=0.063`
+  - both are fixed to the retained wrist-pitch links with the original
+    slider-base endpoint placement baked into the merged URDF
+- Optical camera frames are removed from the merged URDF.
 - Gripper drive gear links/joints are removed.
 - Each hand exposes one gripper control joint:
   - `left_gripper_joint`
