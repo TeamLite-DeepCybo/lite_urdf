@@ -4,7 +4,7 @@ This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot w
 
 ## Contents
 
-- `urdf/lite_000_asm.urdf` - cleaned URDF with standardized link/joint names.
+- `urdf/lite_arm_gripper.urdf` - cleaned URDF with standardized link/joint names.
 - `meshes/` - renamed STL assets referenced by the URDF.
 - `mappings/name_mapping.json` - original CAD link/joint names to cleaned names.
 - `mappings/mesh_mapping.json` - original CAD STL filenames to cleaned filenames.
@@ -24,9 +24,12 @@ This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot w
   - both are fixed to their gripper slider base at the centered fingertip x/y
     position with local `z=0.063`
 - Gripper drive gear links/joints are removed.
-- Same-side gripper fingers are coupled with URDF `mimic` tags:
-  - `left_gripper_right_finger_joint` mimics `left_gripper_left_finger_joint`
-  - `right_gripper_right_finger_joint` mimics `right_gripper_left_finger_joint`
+- Each hand exposes one gripper control joint:
+  - `left_gripper_joint`
+  - `right_gripper_joint`
+- Same-side gripper fingers are coupled with URDF `mimic` tags on passive joints:
+  - `left_gripper_passive_joint` mimics `left_gripper_joint`
+  - `right_gripper_passive_joint` mimics `right_gripper_joint`
 - Arm joint order, zero pose, limits, and positive directions follow the older
   `bhl_arm_1` scheme. Downstream controllers, RL code, and ROS 2 integrations
   that were built around the old convention should be able to use this URDF

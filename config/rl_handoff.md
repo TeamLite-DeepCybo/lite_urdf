@@ -3,14 +3,14 @@
 Recommended URDF for RL starting work:
 
 ```text
-urdf/lite_000_asm.urdf
+urdf/lite_arm_gripper.urdf
 ```
 
 This file keeps the full cleaned CAD assembly while preserving:
 
 ```text
 14 arm revolute joints
-4 gripper prismatic finger joints
+2 gripper prismatic control joints
 2 gripper mimic constraints
 ```
 
@@ -40,13 +40,29 @@ right_elbow_pitch_joint
 right_shoulder_yaw_joint
 right_shoulder_roll_joint
 right_shoulder_pitch_joint
-left_gripper_left_finger_joint
-left_gripper_right_finger_joint
-right_gripper_left_finger_joint
-right_gripper_right_finger_joint
+left_gripper_joint
+right_gripper_joint
 ```
 
-Integrations should treat `urdf/lite_000_asm.urdf` as a drop-in replacement for
+The passive gripper joints are:
+
+```text
+left_gripper_passive_joint
+right_gripper_passive_joint
+```
+
+They are URDF mimic joints used to keep each same-side finger pair coupled and
+should not have individual finger controllers.
+
+The gripper control coordinate is normalized so the default initial position is
+the lower limit:
+
+```text
+left_gripper_joint  initial=0.0 lower=0.0 upper=0.047
+right_gripper_joint initial=0.0 lower=0.0 upper=0.047
+```
+
+Integrations should treat `urdf/lite_arm_gripper.urdf` as a drop-in replacement for
 the old arm convention. Avoid adding simulator-side sign flips, reordered joint
 lists, or extra home offsets unless the target stack explicitly needs them.
 

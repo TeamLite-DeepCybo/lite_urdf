@@ -478,9 +478,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0 0.0143 0.0239" rpy="0 0 0" />
+            <origin xyz="0 0.0143 0.0291864" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.054721" length="0.279443" />
+                <cylinder radius="0.054721" length="0.209443" />
             </geometry>
         </collision>
         <inertial>
@@ -500,9 +500,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.013062 0.0064533 0.0310738" rpy="0 0 0" />
+            <origin xyz="-0.009 0.006 0.0317261" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.012247" length="0.084495" />
+                <box size="0.038 0.042 0.06" />
             </geometry>
         </collision>
         <inertial>
@@ -522,9 +522,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0130339 0.006 0.0268079" rpy="0 0 0" />
+            <origin xyz="-0.009 0.006 0.0318994" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.012247" length="0.084495" />
+                <box size="0.038 0.042 0.06" />
             </geometry>
         </collision>
         <inertial>
@@ -840,12 +840,6 @@
                 <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
             </material>
         </visual>
-        <collision>
-            <origin xyz="-0.0112 -0.0035 0.0014" rpy="0 0 0" />
-            <geometry>
-                <box size="0.018 0.012 0.005" />
-            </geometry>
-        </collision>
         <inertial>
             <origin xyz="-0.01125 -0.0034914 0.0017499" rpy="0 0 0" />
             <mass value="0.0000019" />
@@ -878,12 +872,6 @@
                 <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
             </material>
         </visual>
-        <collision>
-            <origin xyz="0.0112 -0.0035 0.0014" rpy="0 0 0" />
-            <geometry>
-                <box size="0.018 0.012 0.005" />
-            </geometry>
-        </collision>
         <inertial>
             <origin xyz="0.01125 -0.0034914 0.0017499" rpy="0 0 0" />
             <mass value="0.0000019" />
@@ -965,9 +953,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0137504 0.006 0.0311439" rpy="0 0 0" />
+            <origin xyz="0.0090001 0.006 0.0316603" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.012247" length="0.084495" />
+                <box size="0.038 0.042 0.06" />
             </geometry>
         </collision>
         <inertial>
@@ -987,9 +975,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0131435 0.006 0.0270767" rpy="0 0 0" />
+            <origin xyz="0.009 0.006 0.0319849" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.012247" length="0.084495" />
+                <box size="0.038 0.042 0.06" />
             </geometry>
         </collision>
         <inertial>
@@ -1164,6 +1152,12 @@
                 <color rgba="0.19607800 0.19607800 0.19607800 1.00000000" />
             </material>
         </visual>
+        <collision>
+            <origin xyz="-0.0146725 0.015665 0.012" rpy="0 1.5707963 0" />
+            <geometry>
+                <cylinder radius="0.005" length="0.18" />
+            </geometry>
+        </collision>
         <inertial>
             <origin xyz="-0.0146725 0.0146725 0.00787" rpy="0 0 0" />
             <mass value="0.0000171" />
@@ -1183,7 +1177,7 @@
         <collision>
             <origin xyz="-0.0146725 0.0156648 0.012" rpy="0 1.5707963 0" />
             <geometry>
-                <cylinder radius="0.005" length="0.19" />
+                <cylinder radius="0.005" length="0.18" />
             </geometry>
         </collision>
         <inertial>
@@ -1843,7 +1837,7 @@
         <parent link="left_elbow_actuator_link" />
         <child link="left_elbow_pitch_link" />
         <origin xyz="0 0 -0.001" rpy="-3.14159 0.0000005 2.959272" />
-        <axis xyz="0 0 -1" />
+        <axis xyz="0 0 1" />
         <limit lower="-2.356198" upper="0" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
@@ -1879,7 +1873,7 @@
         <parent link="left_shoulder_pitch_motor_link" />
         <child link="left_shoulder_pitch_link" />
         <origin xyz="0 0 -0.004" rpy="2.0272911 -1.5707927 1.5707973" />
-        <axis xyz="1 0 0" />
+        <axis xyz="-1 0 0" />
         <limit lower="-3.1415916" upper="0.7853984" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
@@ -1951,7 +1945,7 @@
         <parent link="right_shoulder_roll_actuator_link" />
         <child link="right_shoulder_roll_link" />
         <origin xyz="-0.013435 -0.013435 -0.052" rpy="-1.5707994 -0.000002 2.5591776" />
-        <axis xyz="0 -1 0" />
+        <axis xyz="0 1 0" />
         <limit lower="-3.3161224" upper="0.1745326" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
@@ -1971,19 +1965,19 @@
             <armature>0</armature>
         </hardware>
     </joint>
-    <joint name="left_gripper_left_finger_joint" type="prismatic">
+    <joint name="left_gripper_joint" type="prismatic">
         <parent link="left_gripper_slider_base_link" />
         <child link="left_gripper_finger_left_link" />
-        <origin xyz="-0.0384585 0.0035 0.0033" rpy="0 0 0" />
+        <origin xyz="-0.03975 0.0035 0.0033" rpy="0 0 0" />
         <axis xyz="1 0 0" />
-        <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
+        <limit lower="0" upper="0.047" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
             <armature>0</armature>
         </hardware>
     </joint>
-    <joint name="left_gripper_right_finger_joint" type="prismatic">
+    <joint name="left_gripper_passive_joint" type="prismatic">
         <parent link="left_gripper_slider_base_link" />
         <child link="left_gripper_finger_right_link" />
         <origin xyz="-0.11025 0.0035 0.0033" rpy="0 0 0" />
@@ -1994,21 +1988,21 @@
             <motorDirection>1</motorDirection>
             <armature>0</armature>
         </hardware>
-        <mimic joint="left_gripper_left_finger_joint" multiplier="1" offset="0" />
+        <mimic joint="left_gripper_joint" multiplier="1" offset="0" />
     </joint>
-    <joint name="right_gripper_left_finger_joint" type="prismatic">
+    <joint name="right_gripper_joint" type="prismatic">
         <parent link="right_gripper_slider_base_link" />
         <child link="right_gripper_finger_left_link" />
         <origin xyz="-0.0397241 0.0035 0.0033" rpy="0 0 0" />
         <axis xyz="1 0 0" />
-        <limit lower="-0.0012915" upper="0.0457085" effort="1" velocity="1" />
+        <limit lower="0" upper="0.047" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
             <armature>0</armature>
         </hardware>
     </joint>
-    <joint name="right_gripper_right_finger_joint" type="prismatic">
+    <joint name="right_gripper_passive_joint" type="prismatic">
         <parent link="right_gripper_slider_base_link" />
         <child link="right_gripper_finger_right_link" />
         <origin xyz="-0.11025 0.0035 0.0033" rpy="0 0 0" />
@@ -2019,7 +2013,7 @@
             <motorDirection>1</motorDirection>
             <armature>0</armature>
         </hardware>
-        <mimic joint="right_gripper_left_finger_joint" multiplier="1" offset="0" />
+        <mimic joint="right_gripper_joint" multiplier="1" offset="0" />
     </joint>
     <joint name="fixed_1_joint" type="fixed">
         <parent link="right_wrist_pitch_link" />
