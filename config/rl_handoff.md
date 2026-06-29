@@ -1,12 +1,13 @@
 # RL Handoff Notes
 
-Recommended URDF for RL starting work:
+Recommended URDFs for RL starting work:
 
 ```text
-urdf/lite_arm_gripper.urdf
+urdf/lite_flash_arm_gripper.urdf
+urdf/lite_pro_arm_gripper.urdf
 ```
 
-This file keeps the full cleaned CAD assembly while preserving:
+Both files keep the full cleaned CAD assembly while preserving:
 
 ```text
 14 arm revolute joints
@@ -62,9 +63,10 @@ left_gripper_joint  initial=0.0 lower=0.0 upper=0.047
 right_gripper_joint initial=0.0 lower=0.0 upper=0.047
 ```
 
-Integrations should treat `urdf/lite_arm_gripper.urdf` as a drop-in replacement for
-the old arm convention. Avoid adding simulator-side sign flips, reordered joint
-lists, or extra home offsets unless the target stack explicitly needs them.
+Integrations should treat both `lite_flash_*` and `lite_pro_*` URDFs as
+drop-in replacements for the old arm convention. Avoid adding simulator-side
+sign flips, reordered joint lists, or extra home offsets unless the target stack
+explicitly needs them.
 
 The merged URDF keeps the three camera links:
 
@@ -105,19 +107,35 @@ If the target simulator ignores URDF `mimic` tags, implement the same-side gripp
 
 ## Collision Notes
 
-The URDF uses the sparse collision style from the older `bhl_arm_1` model:
+The branch carries two collision variants:
 
-- chest/body has one primitive box
-- each arm has simple cylinders only on shoulder-yaw and wrist-yaw links
-- gripper fingertips use small primitive boxes
-- camera links, internal housings, and adjacent joint-stack components are intentionally collisionless
+- `lite_flash_*` uses the lightweight collision style from the older
+  `bhl_arm_1` model: sparse primitives and gripper collision meshes intended to
+  avoid false self-collisions in simple importers.
+- `lite_pro_*` uses visual STL meshes as collision meshes for every link with a
+  visual mesh. Camera and task-frame links remain collisionless because they do
+  not have visual meshes.
 
-This avoids false self-collisions in the assembled arm. Treat the collisions as lightweight RL contact geometry, not full visual-geometry coverage.
+For Pro, adjacent joint-stack visual meshes can overlap or touch in the default
+pose. This is expected for a visual-mesh collision asset and should be handled
+with simulator-side self-collision filtering:
+
+- MuJoCo filters parent-child body contacts by default and supports
+  `contype`/`conaffinity` plus explicit `<exclude>` pairs.
+- Genesis defaults to disabling adjacent collision.
+- Gazebo/SDFormat does not collide joint-connected links when model
+  self-collision is enabled.
+- Isaac/PhysX should be checked with filtered collision pairs for overlapping
+  robot internals.
+
+Keep the contact plane clear of unintended visual mesh contact at the default
+pose. The internal robot contacts are the pairs intended to be filtered.
 
 Remaining physics work:
 
 ```text
-verify collision behavior in the target simulator
+choose Flash or Pro collision variant for the target simulator
+verify visual-mesh collision behavior and self-collision filtering if using Pro
 choose simulator-specific actuator model
 verify/tune mass and inertia values
 confirm whether the simulator supports URDF mimic tags
