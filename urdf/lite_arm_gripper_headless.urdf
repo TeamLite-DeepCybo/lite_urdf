@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<robot name="lite_000_asm">
+<robot name="lite_000_asm_headless">
     <link name="right_wrist_yaw_motor_link">
         <inertial>
             <origin xyz="-0.0001343 -0.0214752 -0.0000049" rpy="0 0 0" />
@@ -417,7 +417,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://lite_urdf/meshes/world_root_visual.stl" />
+                <mesh filename="package://lite_urdf/meshes/world_root_headless.stl" />
             </geometry>
             <material name="goldenglow_world_root">
                 <color rgba="0.98039216 0.97254902 0.98823529 1.00000000" />
@@ -429,13 +429,6 @@
                 <cylinder radius="0.054721" length="0.209443" />
             </geometry>
         </collision>
-    </link>
-    <link name="head_camera_link">
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <mass value="1e-9" />
-            <inertia ixx="1e-12" ixy="0" ixz="0" iyy="1e-12" iyz="0" izz="1e-12" />
-        </inertial>
     </link>
     <link name="left_wrist_camera_link">
         <inertial>
@@ -682,11 +675,6 @@
             <armature>0</armature>
         </hardware>
         <mimic joint="right_gripper_joint" multiplier="1" offset="0" />
-    </joint>
-    <joint name="head_camera_joint" type="fixed">
-        <parent link="world_root" />
-        <child link="head_camera_link" />
-        <origin xyz="-1.937121605e-06 -0.1082753717 1.010000795" rpy="0 0.7853908536 -1.570796354" />
     </joint>
     <joint name="left_wrist_camera_joint" type="fixed">
         <parent link="left_wrist_pitch_link" />

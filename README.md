@@ -1,20 +1,28 @@
-# Lite URDF - RL Ready Branch
+# DeepCybo Lite V2 Flash URDF
 
-This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot work.
+This branch contains the cleaned, merged-STL URDF package for Lite/BAR Lite robot work.
 
 ## Contents
 
 - `urdf/lite_arm_gripper.urdf` - cleaned URDF with standardized link/joint names.
-- `meshes/` - renamed STL assets referenced by the URDF.
+- `urdf/lite_arm_gripper_headless.urdf` - variant without the head camera frame
+  or head/top visual geometry.
+- `meshes/` - merged STL assets referenced by the URDFs.
+- `meshes/world_root_headless.stl` - headless `world_root` visual mesh used by
+  `lite_arm_gripper_headless.urdf`.
 - `mappings/name_mapping.json` - original CAD link/joint names to cleaned names.
 - `mappings/mesh_mapping.json` - original CAD STL filenames to cleaned filenames.
 
 ## Current State
 
+- Visual materials use a GoldenGlow-inspired color palette mirrored across the
+  left and right arms. Gripper finger links are black in both URDF variants.
 - Camera frames are included:
   - `head_camera_link`
   - `left_wrist_camera_link`
   - `right_wrist_camera_link`
+- The headless URDF removes `head_camera_link` and `head_camera_joint`, while
+  keeping both wrist camera frames.
 - Gripper tip midpoint endpoint frames are included:
   - `left_gripper_tip_middle_link`
   - `right_gripper_tip_middle_link`
@@ -34,6 +42,9 @@ This branch contains the cleaned full CAD URDF package for Lite/BAR Lite robot w
   without remapping joint semantics.
 - Link, joint, and mesh names are ASCII snake_case.
 - Mesh paths use `package://lite_urdf/meshes/...`.
+- Fixed-link STL geometry has been merged into retained movable/root link
+  meshes. Use the archived temp branch if the merge script or source experiment
+  notes are needed.
 
 ## RL Notes
 
@@ -46,6 +57,7 @@ Before high-throughput RL training, add or verify:
 - inertial parameters
 - simulator-specific configuration
 
-Do not use an automatically collapsed fixed-joint version unless it has been visually verified in a URDF viewer. The full cleaned URDF is the current source of truth.
+The merged URDF is the current source of truth. Use the headless URDF when the
+upper head/top assembly should be omitted from visualization/import.
 
 For RL simulation, prefer the target simulator/importer fixed-joint merge option instead of a locally collapsed URDF. See `config/rl_handoff.md` for Isaac, MuJoCo, Genesis, and Gazebo notes.
