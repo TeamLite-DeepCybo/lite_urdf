@@ -51,7 +51,6 @@ This branch contains the cleaned, merged-STL URDF package for Lite/BAR Lite robo
 This is a good visual and kinematic source package, but it is not yet a final physics model.
 Before high-throughput RL training, add or verify:
 
-- collision geometry
 - actuator/transmission metadata
 - simulator support for URDF `mimic`, or equivalent gripper coupling in simulator config
 - inertial parameters
