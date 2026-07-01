@@ -7,12 +7,17 @@ robot work, with Flash and Pro collision variants.
 
 - `urdf/lite_flash_arm_gripper.urdf` - lightweight-collision URDF with
   standardized link/joint names.
+- `urdf/lite_flash_arm_hand.urdf` - Flash variant with O6 dexterous hands
+  mounted at the wrist-pitch links.
 - `urdf/lite_flash_arm_gripper_headless.urdf` - Flash variant without the head
   camera frame or head/top visual geometry.
 - `urdf/lite_pro_arm_gripper.urdf` - Pro URDF where collision meshes mirror
   visual meshes.
+- `urdf/lite_pro_arm_hand.urdf` - Pro variant with O6 dexterous hands mounted
+  at the wrist-pitch links.
 - `urdf/lite_pro_arm_gripper_headless.urdf` - Pro headless variant.
 - `meshes/` - merged STL assets referenced by the URDFs.
+- `meshes/left_o6/`, `meshes/right_o6/` - O6 dexterous hand mesh assets.
 - `meshes/world_root_headless.stl` - headless `world_root` visual mesh used by
   the headless URDFs.
 - `mappings/name_mapping.json` - original CAD link/joint names to cleaned names.
