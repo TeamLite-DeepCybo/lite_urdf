@@ -9,8 +9,8 @@ robot work, with Flash and Pro collision variants.
   standardized link/joint names.
 - `urdf/lite_flash_arm_hand.urdf` - Flash variant with O6 dexterous hands
   mounted at the wrist-pitch links.
-- `urdf/lite_flash_arm_gripper_headless.urdf` - Flash variant without the head
-  camera frame or head/top visual geometry.
+- `urdf/lite_flash_arm_gripper_headless.urdf` - Flash variant with the
+  headless torso mesh and retained task frames.
 - `urdf/lite_pro_arm_gripper.urdf` - Pro URDF where collision meshes mirror
   visual meshes.
 - `urdf/lite_pro_arm_hand.urdf` - Pro variant with O6 dexterous hands mounted
@@ -46,6 +46,11 @@ robot work, with Flash and Pro collision variants.
 - Same-side gripper fingers are coupled with URDF `mimic` tags on passive joints:
   - `left_gripper_passive_joint` mimics `left_gripper_joint`
   - `right_gripper_passive_joint` mimics `right_gripper_joint`
+- O6 hand variants replace the two-finger gripper geometry with dexterous hand
+  links. Their O6 wrist-roll adapter joints are fixed:
+  - `lh_wrist_roll` uses `rpy="0 0 1.5707963268"`
+  - `rh_wrist_roll` uses `rpy="0 0 -1.5707963268"`
+  - the hand alignment offsets are baked into the arm wrist-pitch joint origins
 - Arm joint order, zero pose, limits, and positive directions follow the older
   `bhl_arm_1` scheme. Downstream controllers, RL code, and ROS 2 integrations
   that were built around the old convention should be able to use this URDF
