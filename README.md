@@ -26,8 +26,8 @@ robot work, with Flash and Pro collision variants.
   - `head_camera_link`
   - `left_wrist_camera_link`
   - `right_wrist_camera_link`
-- The headless URDF removes `head_camera_link` and `head_camera_joint`, while
-  keeping both wrist camera frames.
+- The headless URDF keeps all camera task frames while using the headless
+  torso mesh.
 - Gripper tip midpoint endpoint frames are included:
   - `left_gripper_tip_middle_link`
   - `right_gripper_tip_middle_link`
