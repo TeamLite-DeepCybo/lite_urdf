@@ -9,12 +9,15 @@ robot work, with Flash and Pro collision variants.
   standardized link/joint names.
 - `urdf/lite_flash_arm_hand.urdf` - Flash variant with O6 dexterous hands
   mounted at the wrist-pitch links.
+- `urdf/lite_flash_arm_hand_headless.urdf` - Flash O6 hand variant with the
+  headless torso mesh.
 - `urdf/lite_flash_arm_gripper_headless.urdf` - Flash variant with the
   headless torso mesh and retained task frames.
 - `urdf/lite_pro_arm_gripper.urdf` - Pro URDF where collision meshes mirror
   visual meshes.
 - `urdf/lite_pro_arm_hand.urdf` - Pro variant with O6 dexterous hands mounted
   at the wrist-pitch links.
+- `urdf/lite_pro_arm_hand_headless.urdf` - Pro O6 hand headless variant.
 - `urdf/lite_pro_arm_gripper_headless.urdf` - Pro headless variant.
 - `meshes/` - merged STL assets referenced by the URDFs.
 - `meshes/left_o6/`, `meshes/right_o6/` - O6 dexterous hand mesh assets.
@@ -27,20 +30,22 @@ robot work, with Flash and Pro collision variants.
 
 - Visual materials use a GoldenGlow-inspired color palette mirrored across the
   left and right arms. Gripper finger links are black in both URDF variants.
-- Camera frames are included:
+- Gripper variants include camera task frames:
   - `head_camera_link`
   - `left_wrist_camera_link`
   - `right_wrist_camera_link`
-- The headless URDF keeps all camera task frames while using the headless
-  torso mesh.
-- Gripper tip midpoint endpoint frames are included:
+- Hand variants keep `head_camera_link` and omit the wrist/gripper camera
+  frames.
+- The headless URDFs use the headless torso mesh while retaining the applicable
+  task frames for each end effector variant.
+- Gripper variants include tip midpoint endpoint frames:
   - `left_gripper_tip_middle_link`
   - `right_gripper_tip_middle_link`
   - both are fixed to the retained wrist-pitch links with the original
     slider-base endpoint placement baked into the merged URDF
 - Optical camera frames are removed from the merged URDF.
 - Gripper drive gear links/joints are removed.
-- Each hand exposes one gripper control joint:
+- Each gripper exposes one control joint:
   - `left_gripper_joint`
   - `right_gripper_joint`
 - Same-side gripper fingers are coupled with URDF `mimic` tags on passive joints:

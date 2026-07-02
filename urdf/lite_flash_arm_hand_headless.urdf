@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<robot name="lite_flash_arm_hand">
+<robot name="lite_flash_arm_hand_headless">
     <material name="BlackAccent">
         <color rgba="0.15 0.15 0.15 1.0" />
     </material>
@@ -281,7 +281,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://lite_urdf/meshes/world_root_visual.stl" />
+                <mesh filename="package://lite_urdf/meshes/world_root_headless.stl" />
             </geometry>
             <material name="goldenglow_world_root">
                 <color rgba="0.98039216 0.97254902 0.98823529 1.00000000" />

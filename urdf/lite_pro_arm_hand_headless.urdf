@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<robot name="lite_flash_arm_hand">
+<robot name="lite_pro_arm_hand_headless">
     <material name="BlackAccent">
         <color rgba="0.15 0.15 0.15 1.0" />
     </material>
@@ -22,9 +22,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="-1.221561089e-07 -0.033256 0" rpy="1.570796327 -3.673205103e-06 -7.3e-06" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.12" />
+                <mesh filename="package://lite_urdf/meshes/right_wrist_yaw_motor_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -44,9 +44,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="1.093138492e-07 -0.0297598 0" rpy="2.509931214 -1.570791833 2.202461439" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.12" />
+                <mesh filename="package://lite_urdf/meshes/left_wrist_yaw_motor_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -65,6 +65,12 @@
                 <color rgba="0.33725490 0.32941176 0.32941176 1.00000000" />
             </material>
         </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/left_elbow_pitch_link_visual.stl" />
+            </geometry>
+        </collision>
     </link>
     <link name="left_shoulder_pitch_link">
         <inertial>
@@ -82,9 +88,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0408173 -0.0001475 -0.0003191" rpy="1.25 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.06" />
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_pitch_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -104,9 +110,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0911512 -0.0269397 -0.0299579" rpy="-3.1415926 1.2415927 -3.1415926" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.1" />
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_roll_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -126,9 +132,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0810676 0.0076647 -0.0043353" rpy="-0.455 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.06" />
+                <mesh filename="package://lite_urdf/meshes/left_shoulder_yaw_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -148,9 +154,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="-0.0006294789133 0.0249693 -0.0004228140225" rpy="0 -0.414095 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.026" length="0.045" />
+                <mesh filename="package://lite_urdf/meshes/left_wrist_roll_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -169,6 +175,12 @@
                 <color rgba="0.33725490 0.32941176 0.32941176 1.00000000" />
             </material>
         </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://lite_urdf/meshes/right_elbow_pitch_link_visual.stl" />
+            </geometry>
+        </collision>
     </link>
     <link name="right_shoulder_pitch_link">
         <inertial>
@@ -186,9 +198,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0408556 -0.0013229 -0.0002332" rpy="-1.32 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.06" />
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_pitch_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -208,9 +220,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0810147 -0.0248544 0.0537949" rpy="0 0.99 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.1" />
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_roll_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -230,9 +242,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0799504 0 -0.0092276" rpy="1.5707963 0 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.03" length="0.06" />
+                <mesh filename="package://lite_urdf/meshes/right_shoulder_yaw_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -266,9 +278,9 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0012916 0.0269225 -0.000746" rpy="0 0.0743208 0" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.026" length="0.045002" />
+                <mesh filename="package://lite_urdf/meshes/right_wrist_roll_motor_link_visual.stl" />
             </geometry>
         </collision>
     </link>
@@ -281,16 +293,16 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://lite_urdf/meshes/world_root_visual.stl" />
+                <mesh filename="package://lite_urdf/meshes/world_root_headless.stl" />
             </geometry>
             <material name="goldenglow_world_root">
                 <color rgba="0.98039216 0.97254902 0.98823529 1.00000000" />
             </material>
         </visual>
         <collision>
-            <origin xyz="-1.937120689e-06 -0.01429721433 0.759186505" rpy="7.346419954e-06 0 3.141592654" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <cylinder radius="0.054721" length="0.209443" />
+                <mesh filename="package://lite_urdf/meshes/world_root_headless.stl" />
             </geometry>
         </collision>
     </link>
