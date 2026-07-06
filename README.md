@@ -28,8 +28,8 @@ robot work, with Flash and Pro collision variants.
 
 ## Current State
 
-- Visual materials use a GoldenGlow-inspired color palette mirrored across the
-  left and right arms. Gripper finger links are black in both URDF variants.
+- Visual materials use an EVA-inspired color palette mirrored across the left
+  and right arms, with orange gripper fingers and shoulder-roll links.
 - Gripper variants include camera task frames:
   - `head_camera_link`
   - `left_wrist_camera_link`
@@ -56,10 +56,10 @@ robot work, with Flash and Pro collision variants.
   - `lh_wrist_roll` uses `rpy="0 0 1.5707963268"`
   - `rh_wrist_roll` uses `rpy="0 0 -1.5707963268"`
   - the hand alignment offsets are baked into the arm wrist-pitch joint origins
-- Arm joint order, zero pose, limits, and positive directions follow the older
-  `bhl_arm_1` scheme. Downstream controllers, RL code, and ROS 2 integrations
-  that were built around the old convention should be able to use this URDF
-  without remapping joint semantics.
+- Arm joint order and positive directions follow the older `bhl_arm_1` scheme.
+  The shoulder-roll zero pose is shifted to match `bar_description_lite` /
+  `lite_ros2`, where `q=0` places the arms parallel to the ground. Shoulder-roll
+  lower/upper limits preserve the old physical endpoints after that zero shift.
 - Link, joint, and mesh names are ASCII snake_case.
 - Mesh paths use `package://lite_urdf/meshes/...`.
 - Fixed-link STL geometry has been merged into retained movable/root link
@@ -76,6 +76,103 @@ Use `lite_flash_*` when you want conservative lightweight collisions. Use
 `lite_pro_*` for MuJoCo/Genesis-style pipelines that can filter adjacent and
 internal self-collisions while using visual meshes for contact geometry.
 
+Recommended starting points for RL are:
+
+```text
+urdf/lite_flash_arm_gripper.urdf
+urdf/lite_pro_arm_gripper.urdf
+```
+
+Both keep the cleaned CAD assembly while preserving 14 arm revolute joints, 2
+gripper prismatic control joints, and 2 gripper mimic constraints.
+
+### Joint Convention Compatibility
+
+Arm joints keep the older `bhl_arm_1` XML ordering and positive directions. The
+movable joint order is:
+
+```text
+left_wrist_pitch_joint
+left_wrist_roll_joint
+left_wrist_yaw_joint
+left_elbow_pitch_joint
+left_shoulder_yaw_joint
+left_shoulder_roll_joint
+left_shoulder_pitch_joint
+right_wrist_pitch_joint
+right_wrist_roll_joint
+right_wrist_yaw_joint
+right_elbow_pitch_joint
+right_shoulder_yaw_joint
+right_shoulder_roll_joint
+right_shoulder_pitch_joint
+left_gripper_joint
+right_gripper_joint
+```
+
+The shoulder-roll zero pose is intentionally aligned with
+`bar_description_lite` / `lite_ros2`, where `q=0` places the arms parallel to
+the ground. The old physical endpoints are preserved by shifting the coordinate
+zero inside the old range:
+
+```text
+left_shoulder_roll_joint   old q at new zero =  1.39626215 rad  (45% through old range)
+right_shoulder_roll_joint  old q at new zero = -1.39626215 rad  (55% through old range)
+```
+
+Avoid adding simulator-side sign flips, reordered joint lists, or extra home
+offsets unless the target stack explicitly needs them.
+
+### Gripper Coupling
+
+Each physical gripper has two prismatic finger joints driven by one mechanism.
+In the URDF, each hand exposes one actuated gripper joint and one passive mimic
+joint:
+
+```text
+left_gripper_passive_joint  mimics left_gripper_joint
+right_gripper_passive_joint mimics right_gripper_joint
+```
+
+Controllers should command only `left_gripper_joint` and `right_gripper_joint`.
+Do not create separate controllers for individual finger joints. The mimic
+multiplier is `1.0`; the finger axes are opposite directions, so equal scalar
+displacement produces symmetric open/close motion. If the target simulator
+ignores URDF `mimic` tags, implement the same-side coupling in the simulator
+actuator/controller layer.
+
+The gripper control coordinate starts at the lower limit:
+
+```text
+left_gripper_joint  initial=0.0 lower=0.0 upper=0.047
+right_gripper_joint initial=0.0 lower=0.0 upper=0.047
+```
+
+### Frames and Imports
+
+The merged URDF keeps `head_camera_link`, `left_wrist_camera_link`,
+`right_wrist_camera_link`, `left_gripper_tip_middle_link`, and
+`right_gripper_tip_middle_link`. Optical camera frames are removed; add
+simulator-specific site/frame definitions outside this URDF if a downstream
+policy needs optical targets.
+
+Use the simulator/importer fixed-joint merge option instead of a hand-collapsed
+URDF. Keep MuJoCo `fusestatic` enabled, use Isaac/Genesis fixed-joint merge
+options where appropriate, and preserve named task frames only when the target
+simulator needs them. Do not use an automatically collapsed simplification
+unless it has been visually verified.
+
+### Collision Notes
+
+`lite_flash_*` uses sparse lightweight collision geometry inherited from the
+older `bhl_arm_1` model. `lite_pro_*` uses visual STL meshes as collision meshes
+for every visual link, while camera and task-frame links remain collisionless.
+
+For Pro, adjacent joint-stack visual meshes can overlap or touch in the default
+pose. This is expected and should be handled with simulator-side self-collision
+filtering. Keep the contact plane clear of unintended visual mesh contact at the
+default pose; internal robot contacts are the pairs intended to be filtered.
+
 Before high-throughput RL training, add or verify:
 
 - actuator/transmission metadata
@@ -86,5 +183,3 @@ Before high-throughput RL training, add or verify:
 
 Use a headless URDF when the upper head/top assembly should be omitted from
 visualization/import.
-
-For RL simulation, prefer the target simulator/importer fixed-joint merge option instead of a locally collapsed URDF. See `config/rl_handoff.md` for Isaac, MuJoCo, Genesis, and Gazebo notes.

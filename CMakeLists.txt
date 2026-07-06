@@ -3,7 +3,7 @@ project(lite_urdf)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY meshes urdf mappings config
+install(DIRECTORY meshes urdf mappings
   DESTINATION share/${PROJECT_NAME}
 )
 

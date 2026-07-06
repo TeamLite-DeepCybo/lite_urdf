@@ -17,8 +17,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/right_wrist_yaw_motor_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_wrist_yaw">
-                <color rgba="0.98431373 0.72156863 0.74509804 1.00000000" />
+            <material name="lite_wrist_yaw_motor">
+                <color rgba="0.76470588 0.15294118 0.16862745 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -39,8 +39,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/left_wrist_yaw_motor_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_wrist_yaw">
-                <color rgba="0.98431373 0.72156863 0.74509804 1.00000000" />
+            <material name="lite_wrist_yaw_motor">
+                <color rgba="0.76470588 0.15294118 0.16862745 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -61,8 +61,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/left_elbow_pitch_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_elbow_pitch">
-                <color rgba="0.33725490 0.32941176 0.32941176 1.00000000" />
+            <material name="lite_elbow_pitch">
+                <color rgba="0.94117647 0.96078431 0.97647059 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -83,8 +83,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/left_shoulder_pitch_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_shoulder_pitch">
-                <color rgba="0.25882353 0.29411765 0.39215686 1.00000000" />
+            <material name="lite_shoulder_pitch">
+                <color rgba="0.77254902 0.16470588 0.18823529 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -105,8 +105,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/left_shoulder_roll_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_shoulder_roll">
-                <color rgba="0.33333333 0.41568627 0.54509804 1.00000000" />
+            <material name="lite_shoulder_roll">
+                <color rgba="0.84705882 0.52549020 0.03137255 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -127,8 +127,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/left_shoulder_yaw_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_shoulder_yaw">
-                <color rgba="0.97254902 0.74509804 0.80784314 1.00000000" />
+            <material name="lite_shoulder_yaw">
+                <color rgba="0.10196078 0.10588235 0.12549020 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -149,8 +149,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/left_wrist_roll_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_wrist_roll">
-                <color rgba="0.97254902 0.78431373 0.10196078 1.00000000" />
+            <material name="lite_wrist_roll">
+                <color rgba="0.10196078 0.09411765 0.13725490 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -171,8 +171,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/right_elbow_pitch_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_elbow_pitch">
-                <color rgba="0.33725490 0.32941176 0.32941176 1.00000000" />
+            <material name="lite_elbow_pitch">
+                <color rgba="0.94117647 0.96078431 0.97647059 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -193,8 +193,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/right_shoulder_pitch_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_shoulder_pitch">
-                <color rgba="0.25882353 0.29411765 0.39215686 1.00000000" />
+            <material name="lite_shoulder_pitch">
+                <color rgba="0.77254902 0.16470588 0.18823529 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -215,8 +215,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/right_shoulder_roll_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_shoulder_roll">
-                <color rgba="0.33333333 0.41568627 0.54509804 1.00000000" />
+            <material name="lite_shoulder_roll">
+                <color rgba="0.84705882 0.52549020 0.03137255 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -237,8 +237,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/right_shoulder_yaw_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_shoulder_yaw">
-                <color rgba="0.97254902 0.74509804 0.80784314 1.00000000" />
+            <material name="lite_shoulder_yaw">
+                <color rgba="0.10196078 0.10588235 0.12549020 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -273,8 +273,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/right_wrist_roll_motor_link_visual.stl" />
             </geometry>
-            <material name="goldenglow_wrist_roll">
-                <color rgba="0.97254902 0.78431373 0.10196078 1.00000000" />
+            <material name="lite_wrist_roll">
+                <color rgba="0.10196078 0.09411765 0.13725490 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -295,8 +295,8 @@
             <geometry>
                 <mesh filename="package://lite_urdf/meshes/world_root_headless.stl" />
             </geometry>
-            <material name="goldenglow_world_root">
-                <color rgba="0.98039216 0.97254902 0.98823529 1.00000000" />
+            <material name="lite_world_root">
+                <color rgba="0.92156863 0.92156863 0.92156863 1.00000000" />
             </material>
         </visual>
         <collision>
@@ -376,9 +376,9 @@
     <joint name="left_shoulder_roll_joint" type="revolute">
         <parent link="left_shoulder_pitch_link" />
         <child link="left_shoulder_roll_link" />
-        <origin xyz="-0.04100000351 0.02565540881 -0.007919662552" rpy="-0.7846655169 1.140163396 -0.7368651954" />
+        <origin xyz="-0.04100000351 0.02565540881 -0.007919662552" rpy="-2.8052323666 0.4653133292 -2.9859660904" />
         <axis xyz="0 1 0" />
-        <limit lower="-0.1745326" upper="3.3161224" effort="1" velocity="1" />
+        <limit lower="-1.57079475" upper="1.91986025" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
@@ -460,9 +460,9 @@
     <joint name="right_shoulder_roll_joint" type="revolute">
         <parent link="right_shoulder_pitch_link" />
         <child link="right_shoulder_roll_link" />
-        <origin xyz="0.04099980899 0.02527477392 0.006709218258" rpy="2.691965127 0.9393656487 2.770140483" />
+        <origin xyz="0.04099980899 0.02527477392 0.006709218258" rpy="0.3501154544 0.7257811284 0.2377861735" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.3161224" upper="0.1745326" effort="1" velocity="1" />
+        <limit lower="-1.91986025" upper="1.57079475" effort="1" velocity="1" />
         <hardware>
             <motorType>None</motorType>
             <motorDirection>1</motorDirection>
