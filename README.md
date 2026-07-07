@@ -13,6 +13,8 @@ the newer `lite_urdf` arms+grippers assembly.
 - `mjcf/lite.xml` - MuJoCo scene matching the canonical arms+grippers joint
   tree.
 - `mappings/` - source CAD name/mesh mapping retained for provenance.
+- `scripts/generate_mjcf.py` - regenerates `mjcf/lite.xml` from the xacro
+  through MuJoCo's URDF compiler and refreshes MuJoCo-only decimated STL files.
 - `launch/view_lite.launch.py` - standalone joint-slider RViz inspector.
 - `launch/live_rviz.launch.py` - RViz wrapper for viewing the model from a
   live `/lite/joint_states` stream.
@@ -81,6 +83,15 @@ ros2 launch bar_bringup_lite mujoco.launch.py mode:=arms_grippers
 
 The MJCF is intentionally kept in the same package as the xacro and STL assets
 so `mujoco_sim_ros2` can resolve it through `model_package:=lite_urdf`.
+
+Regenerate the MJCF after kinematic or mesh changes with:
+
+```bash
+MUJOCO_COMPILE=/path/to/mujoco/bin/compile scripts/generate_mjcf.py
+```
+
+The generator expects `xacro`, `trimesh`, `scipy`, and `fast-simplification`
+in the active environment.
 
 ## Grippers
 
