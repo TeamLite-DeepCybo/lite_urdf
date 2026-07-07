@@ -5,7 +5,7 @@
       mesh frames are preserved from lite_urdf; exposed arm/gripper joint names
       and optional ros2_control metadata follow lite_urdf.
     -->
-    <xacro:arg name="emit_ros2_control" default="true"/>
+    <xacro:arg name="emit_ros2_control" default="false"/>
     <xacro:arg name="use_fake_hardware" default="true"/>
     <xacro:arg name="use_sim" default="false"/>
     <xacro:arg name="mode" default="arms_grippers"/>
@@ -441,6 +441,12 @@
             <origin xyz="-1.937120689e-06 -0.01429721433 0.759186505" rpy="7.346419954e-06 0 3.141592654" />
             <geometry>
                 <cylinder radius="0.054721" length="0.209443" />
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.0000037 -0.006508 0.952301" rpy="0 0 0" />
+            <geometry>
+                <box size="0.168 0.09 0.16" />
             </geometry>
         </collision>
     </link>
