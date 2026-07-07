@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="bar_lite_arms_grippers">
+  <compiler angle="radian" meshdir="../meshes/" />
+  <option timestep="0.001" integrator="implicitfast" solver="Newton" cone="elliptic" impratio="10" />
+  <visual>
+    <headlight ambient="0.7 0.7 0.7" diffuse="0.25 0.25 0.25" specular="0.1 0.1 0.1" />
+    <map znear="0.01" />
+  </visual>
+  <asset>
+    <mesh name="world_root_visual" file="world_root_visual_mujoco.stl" />
+    <mesh name="left_shoulder_pitch_link_visual" file="left_shoulder_pitch_link_visual.stl" />
+    <mesh name="left_shoulder_roll_link_visual" file="left_shoulder_roll_link_visual.stl" />
+    <mesh name="left_shoulder_yaw_link_visual" file="left_shoulder_yaw_link_visual.stl" />
+    <mesh name="left_elbow_pitch_link_visual" file="left_elbow_pitch_link_visual.stl" />
+    <mesh name="left_wrist_yaw_motor_link_visual" file="left_wrist_yaw_motor_link_visual_mujoco.stl" />
+    <mesh name="left_wrist_roll_link_visual" file="left_wrist_roll_link_visual.stl" />
+    <mesh name="left_wrist_pitch_link_visual" file="left_wrist_pitch_link_visual.stl" />
+    <mesh name="left_gripper_finger_left_link_visual" file="left_gripper_finger_left_link_visual.stl" />
+    <mesh name="left_gripper_finger_left_link_collision" file="left_gripper_finger_left_link_collision.stl" />
+    <mesh name="left_gripper_finger_right_link_visual" file="left_gripper_finger_right_link_visual.stl" />
+    <mesh name="left_gripper_finger_right_link_collision" file="left_gripper_finger_right_link_collision.stl" />
+    <mesh name="right_shoulder_pitch_link_visual" file="right_shoulder_pitch_link_visual.stl" />
+    <mesh name="right_shoulder_roll_link_visual" file="right_shoulder_roll_link_visual.stl" />
+    <mesh name="right_shoulder_yaw_link_visual" file="right_shoulder_yaw_link_visual.stl" />
+    <mesh name="right_elbow_pitch_link_visual" file="right_elbow_pitch_link_visual.stl" />
+    <mesh name="right_wrist_yaw_motor_link_visual" file="right_wrist_yaw_motor_link_visual_mujoco.stl" />
+    <mesh name="right_wrist_roll_motor_link_visual" file="right_wrist_roll_motor_link_visual.stl" />
+    <mesh name="right_wrist_pitch_link_visual" file="right_wrist_pitch_link_visual.stl" />
+    <mesh name="right_gripper_finger_left_link_visual" file="right_gripper_finger_left_link_visual.stl" />
+    <mesh name="right_gripper_finger_left_link_collision" file="right_gripper_finger_left_link_collision.stl" />
+    <mesh name="right_gripper_finger_right_link_visual" file="right_gripper_finger_right_link_visual.stl" />
+    <mesh name="right_gripper_finger_right_link_collision" file="right_gripper_finger_right_link_collision.stl" />
+  </asset>
+  <worldbody>
+    <light diffuse="0.5 0.5 0.5" pos="0 0 4" dir="0 0 -1" />
+    <body name="world_root">
+      <inertial mass="5" diaginertia="0.005 0.005 0.005" pos="0 0 0" />
+      <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.92156863 0.92156863 0.92156863 1" type="mesh" mesh="world_root_visual" />
+      <geom pos="-1.937120689e-06 -0.01429721433 0.759186505" euler="7.346419954e-06 0 3.141592654" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.054721 0.1047215" />
+      <body name="left_shoulder_pitch_link" pos="0.04962222198 -0.007996932602 0.7928799915" euler="0.2994274351 0.1745330072 -3.141587582">
+        <inertial mass="0.35" diaginertia="0.00035 0.00035 0.00035" pos="-0.017422 0.0100505 0.0023346" euler="-0.299414 0 0" />
+        <joint name="left_shoulder_pitch" type="hinge" axis="-1 0 0" damping="0.1" frictionloss="0.1" armature="0.009" range="-3.1415916 0.7853984" actuatorfrcrange="-17 17" />
+        <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.77254902 0.16470588 0.18823529 1" type="mesh" mesh="left_shoulder_pitch_link_visual" />
+        <geom pos="-0.0408173 -0.0001475 -0.0003191" euler="1.25 0 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.03" />
+        <body name="left_shoulder_roll_link" pos="-0.04100000351 0.02565540881 -0.007919662552" euler="-2.805232367 0.4653133292 -2.98596609">
+          <inertial mass="0.35" diaginertia="0.00035 0.00035 0.00035" pos="0.0402802 -0.01516 -0.0119022" euler="0 0.314302 0" />
+          <joint name="left_shoulder_roll" type="hinge" axis="0 1 0" damping="0.1" frictionloss="0.1" armature="0.009" range="-1.57079475 1.91986025" actuatorfrcrange="-14 14" />
+          <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.84705882 0.5254902 0.03137255 1" type="mesh" mesh="left_shoulder_roll_link_visual" />
+          <geom pos="0.0911512 -0.0269397 -0.0299579" euler="-3.1415926 1.2415927 -3.1415926" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.05" />
+          <body name="left_shoulder_yaw_link" pos="0.1148822482 -0.02709980309 -0.03734592284" euler="-2.701771727 -0.3143027 -3.14158898">
+            <inertial mass="0.35" diaginertia="0.00035 0.00035 0.00035" pos="-0.0338829 0.0029572 0.0055402" euler="-0.43982 0 0" />
+            <joint name="left_shoulder_yaw" type="hinge" axis="1 0 0" damping="0.1" frictionloss="0.1" armature="0.009" range="-1.5708 1.5708" actuatorfrcrange="-14 14" />
+            <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.10196078 0.10588235 0.1254902 1" type="mesh" mesh="left_shoulder_yaw_link_visual" />
+            <geom pos="-0.0810676 0.0076647 -0.0043353" euler="-0.455 0 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.03" />
+            <body name="left_elbow_pitch_link" pos="-0.0800000025 0.02048037438 0.02003692937" euler="-0.2962759628 -0.3299797087 -0.8151948384">
+              <inertial mass="0.12" diaginertia="0.00012 0.00012 0.00012" pos="-0.0146726 -0.0332905 -0.013722" euler="0 0 0.86488" />
+              <joint name="left_elbow_pitch" type="hinge" axis="0 0 1" damping="0.1" frictionloss="0.1" armature="0.009" range="-2.356198 0" actuatorfrcrange="-14 14" />
+              <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.94117647 0.96078431 0.97647059 1" type="mesh" mesh="left_elbow_pitch_link_visual" />
+              <body name="left_wrist_yaw_motor_link" pos="-0.0339087 -0.0551924 -0.0271" euler="2.1761163 1.5707931 1.4702039">
+                <inertial mass="0.3" diaginertia="0.0003 0.0003 0.0003" pos="-0.0001343 -0.0214752 -4.9e-06" />
+                <joint name="left_wrist_yaw" type="hinge" axis="0 1 0" damping="0.1" frictionloss="0.1" armature="0.005" range="-1.5707945 1.5707945" actuatorfrcrange="-4 4" />
+                <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.76470588 0.15294118 0.16862745 1" type="mesh" mesh="left_wrist_yaw_motor_link_visual" />
+                <geom pos="1.093138492e-07 -0.0297598 0" euler="2.509931214 -1.570791833 2.202461439" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.06" />
+                <body name="left_wrist_roll_link" pos="-0.02599949677 -0.1370000955 -6.899333461e-08" euler="3.141589755 -0.4140965 1.570801166">
+                  <inertial mass="0.2" diaginertia="0.0002 0.0002 0.0002" pos="0.0068741 0.026505 -0.0140495" euler="0 -0.414095 0" />
+                  <joint name="left_wrist_roll" type="hinge" axis="0 -1 0" damping="0.1" frictionloss="0.1" armature="0.005" range="-0.6981335 0.6981335" actuatorfrcrange="-4 4" />
+                  <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.10196078 0.09411765 0.1372549 1" type="mesh" mesh="left_wrist_roll_link_visual" />
+                  <geom pos="-0.0006294789133 0.0249693 -0.0004228140225" euler="0 -0.414095 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.026 0.0225" />
+                  <body name="left_wrist_pitch_link" pos="-0.009053135665 0.026 0.02059831873" euler="0.2838290718 0.30570169 -2.371804821">
+                    <inertial mass="0.12" diaginertia="0.00012 0.00012 0.00012" pos="0.023173 -0.0205664 -0.0112555" euler="0 0 -0.725768" />
+                    <joint name="left_wrist_pitch" type="hinge" axis="0 0 1" damping="0.1" frictionloss="0.1" armature="0.005" range="-0.7854 0.7854" actuatorfrcrange="-4 4" />
+                    <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.47843137 0.45098039 0.47843137 1" type="mesh" mesh="left_wrist_pitch_link_visual" />
+                    <geom pos="0.1208810353 -0.1117893004 0.02800887784" euler="-0.785393176 -0.06981242277 0.845026119" group="3" rgba="0.35 0.35 0.35 0.25" type="box" size="0.02 0.02 0.005" />
+                    <geom pos="0.07690913134 -0.06851299558 -0.01754819854" euler="1.500983127 -3.666126471e-06 2.415824556" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.005 0.09" />
+                    <geom pos="0.05264540883 -0.04689062756 -0.01853816177" euler="1.5708 -0.0698132 0.845028" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.023 0.02" />
+                    <body name="left_gripper_finger_left_link" pos="0.1040961904 -0.04585909073 -0.01258790935" euler="1.5708 -0.0698132 0.845028">
+                      <inertial mass="0.03" diaginertia="3e-05 3e-05 3e-05" pos="-0.01125 -0.0034914 0.0017499" />
+                      <joint name="left_gripper" type="slide" axis="1 0 0" damping="0.02" frictionloss="0.01" armature="0.001" range="0 0.047" actuatorfrcrange="-4 4" />
+                      <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.84705882 0.5254902 0.03137255 1" type="mesh" mesh="left_gripper_finger_left_link_visual" />
+                      <geom group="3" rgba="0.35 0.35 0.35 0.25" type="mesh" mesh="left_gripper_finger_left_link_collision" />
+                    </body>
+                    <body name="left_gripper_finger_right_link" pos="0.05741859357 -0.09846390861 -0.01750574286" euler="1.5708 -0.0698132 0.845028">
+                      <inertial mass="0.03" diaginertia="3e-05 3e-05 3e-05" pos="0.01125 -0.0034914 0.0017499" />
+                      <joint name="left_gripper_passive_joint" type="slide" axis="-1 0 0" damping="0.02" frictionloss="0.01" armature="0.001" range="0 0.047" />
+                      <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.84705882 0.5254902 0.03137255 1" type="mesh" mesh="left_gripper_finger_right_link_visual" />
+                      <geom group="3" rgba="0.35 0.35 0.35 0.25" type="mesh" mesh="left_gripper_finger_right_link_collision" />
+                    </body>
+                    <body name="left_wrist_camera_link" pos="0.1237537251 -0.1140010331 0.02440096001" euler="-2.356199478 0.0698124228 -2.296566535">
+                      <inertial mass="0.001" diaginertia="1e-06 1e-06 1e-06" pos="0 0 0" />
+                      <site name="left_wrist_camera_link" size="0.01" rgba="0.1 0.4 1 0.6" />
+                    </body>
+                    <body name="left_gripper_tip_middle_link" pos="0.1260019346 -0.1111205665 -0.01849347726" euler="1.5708 -0.0698132 0.845028">
+                      <inertial mass="0.001" diaginertia="1e-06 1e-06 1e-06" pos="0 0 0" />
+                      <site name="left_gripper_tip_middle_link" size="0.01" rgba="0.1 0.4 1 0.6" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_shoulder_pitch_link" pos="-0.04962609453 -0.007796944815 0.7928799997" euler="-0.2594571717 -0.1745330458 3.141587621">
+        <inertial mass="0.35" diaginertia="0.00035 0.00035 0.00035" pos="0.017422 0.0072834 0.0073085" euler="0.25946 0 0" />
+        <joint name="right_shoulder_pitch" type="hinge" axis="-1 0 0" damping="0.1" frictionloss="0.1" armature="0.009" range="-3.1415916 0.7853984" actuatorfrcrange="-17 17" />
+        <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.77254902 0.16470588 0.18823529 1" type="mesh" mesh="right_shoulder_pitch_link_visual" />
+        <geom pos="0.0408556 -0.0013229 -0.0002332" euler="-1.32 0 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.03" />
+        <body name="right_shoulder_roll_link" pos="0.04099980899 0.02527477392 0.006709218258" euler="0.3501154544 0.7257811284 0.2377861735">
+          <inertial mass="0.35" diaginertia="0.00035 0.00035 0.00035" pos="0.0354428 -0.0143616 0.0220107" euler="0 -0.582412 0" />
+          <joint name="right_shoulder_roll" type="hinge" axis="0 1 0" damping="0.1" frictionloss="0.1" armature="0.009" range="-1.91986025 1.57079475" actuatorfrcrange="-14 14" />
+          <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.84705882 0.5254902 0.03137255 1" type="mesh" mesh="right_shoulder_roll_link_visual" />
+          <geom pos="0.0810147 -0.0248544 0.0537949" euler="0 0.99 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.05" />
+          <body name="right_shoulder_yaw_link" pos="0.1008846481 -0.02639984048 0.06644494687" euler="1.55277638 -0.5824100464 3.673220854e-06">
+            <inertial mass="0.35" diaginertia="0.00035 0.00035 0.00035" pos="0.0338839 0.0062782 -0.0002046" euler="-1.55277 0 0" />
+            <joint name="right_shoulder_yaw" type="hinge" axis="-1 0 0" damping="0.1" frictionloss="0.1" armature="0.009" range="-1.5707972 1.5707972" actuatorfrcrange="-14 14" />
+            <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.10196078 0.10588235 0.1254902 1" type="mesh" mesh="right_shoulder_yaw_link_visual" />
+            <geom pos="0.0799504 0 -0.0092276" euler="1.5707963 0 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.03" />
+            <body name="right_elbow_pitch_link" pos="0.08000000295 0.0270258376 -0.009514478403" euler="-1.552756021 0.04712209601 0.0008482378368">
+              <inertial mass="0.12" diaginertia="0.00012 0.00012 0.00012" pos="0.0340985 -0.0119819 -0.0129345" euler="0 0 -0.0471294" />
+              <joint name="right_elbow_pitch" type="hinge" axis="0 0 1" damping="0.1" frictionloss="0.1" armature="0.009" range="0 2.356199" actuatorfrcrange="-14 14" />
+              <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.94117647 0.96078431 0.97647059 1" type="mesh" mesh="right_elbow_pitch_link_visual" />
+              <body name="right_wrist_yaw_motor_link" pos="0.0634578 -0.0130041 -0.0264" euler="3.1415913 5.5e-06 -1.6179277">
+                <inertial mass="0.3" diaginertia="0.0003 0.0003 0.0003" pos="-0.0001343 -0.0214752 -4.9e-06" />
+                <joint name="right_wrist_yaw" type="hinge" axis="0 1 0" damping="0.1" frictionloss="0.1" armature="0.005" range="-1.5707955 1.5707955" actuatorfrcrange="-4 4" />
+                <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.76470588 0.15294118 0.16862745 1" type="mesh" mesh="right_wrist_yaw_motor_link_visual" />
+                <geom pos="-1.221561089e-07 -0.033256 0" euler="1.570796327 -3.673205103e-06 -7.3e-06" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.03 0.06" />
+                <body name="right_wrist_roll_motor_link" pos="-4.077257665e-07 -0.137 -0.026" euler="1.57079999 2.727450251e-07 -1.645121">
+                  <inertial mass="0.2" diaginertia="0.0002 0.0002 0.0002" pos="0.0006071 0.0259549 0.0117595" euler="0 0.0743208 0" />
+                  <joint name="right_wrist_roll" type="hinge" axis="0 1 0" damping="0.1" frictionloss="0.1" armature="0.005" range="-0.698132 0.698132" actuatorfrcrange="-4 4" />
+                  <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.10196078 0.09411765 0.1372549 1" type="mesh" mesh="right_wrist_roll_motor_link_visual" />
+                  <geom pos="0.0012916 0.0269225 -0.000746" euler="0 0.0743208 0" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.026 0.022501" />
+                  <body name="right_wrist_pitch_link" pos="0.0016707 0.026 0.0224379" euler="0.02854527272 0.06862962747 0.3945277653">
+                    <inertial mass="0.12" diaginertia="0.00012 0.00012 0.00012" pos="0.0286135 -0.0118841 -0.0112555" euler="0 0 -0.393547" />
+                    <joint name="right_wrist_pitch" type="hinge" axis="0 0 1" damping="0.1" frictionloss="0.1" armature="0.005" range="-0.785399 0.785399" actuatorfrcrange="-4 4" />
+                    <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.47843137 0.45098039 0.47843137 1" type="mesh" mesh="right_wrist_pitch_link_visual" />
+                    <geom pos="0.1513366084 -0.0663160654 0.02735937002" euler="-0.7853878688 -0.06981242277 1.177248119" group="3" rgba="0.35 0.35 0.35 0.25" type="box" size="0.02 0.02 0.005" />
+                    <geom pos="0.09509964415 -0.0395609147 -0.01761512239" euler="1.500983127 -3.666126471e-06 2.748046556" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.005 0.09" />
+                    <geom pos="0.0651106442 -0.02703434655 -0.01860488611" euler="1.5708 -0.0698132 1.17725" group="3" rgba="0.35 0.35 0.35 0.25" type="cylinder" size="0.023 0.02" />
+                    <body name="right_gripper_finger_left_link" pos="0.113421574 -0.009254971529 -0.01265282701" euler="1.5708 -0.0698132 1.17725">
+                      <inertial mass="0.03" diaginertia="3e-05 3e-05 3e-05" pos="-0.01125 -0.0034914 0.0017499" />
+                      <joint name="right_gripper" type="slide" axis="1 0 0" damping="0.02" frictionloss="0.01" armature="0.001" range="0 0.047" actuatorfrcrange="-4 4" />
+                      <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.84705882 0.5254902 0.03137255 1" type="mesh" mesh="right_gripper_finger_left_link_visual" />
+                      <geom group="3" rgba="0.35 0.35 0.35 0.25" type="mesh" mesh="right_gripper_finger_left_link_collision" />
+                    </body>
+                    <body name="right_gripper_finger_right_link" pos="0.08644316447 -0.07423085268 -0.0175724672" euler="1.5708 -0.0698132 1.17725">
+                      <inertial mass="0.03" diaginertia="3e-05 3e-05 3e-05" pos="0.01125 -0.0034914 0.0017499" />
+                      <joint name="right_gripper_passive_joint" type="slide" axis="-1 0 0" damping="0.02" frictionloss="0.01" armature="0.001" range="0 0.047" />
+                      <geom contype="0" conaffinity="0" group="1" density="0" rgba="0.84705882 0.5254902 0.03137255 1" type="mesh" mesh="right_gripper_finger_right_link_visual" />
+                      <geom group="3" rgba="0.35 0.35 0.35 0.25" type="mesh" mesh="right_gripper_finger_right_link_collision" />
+                    </body>
+                    <body name="right_wrist_camera_link" pos="0.1542184407 -0.06728357609 0.02433415705" euler="-2.356204785 0.0698124228 -1.964344535">
+                      <inertial mass="0.001" diaginertia="1e-06 1e-06 1e-06" pos="0 0 0" />
+                      <site name="right_wrist_camera_link" size="0.01" rgba="0.1 0.4 1 0.6" />
+                    </body>
+                    <body name="right_gripper_tip_middle_link" pos="0.1551621984 -0.06441037825 -0.01860434352" euler="1.5708 -0.0698132 1.17725">
+                      <inertial mass="0.001" diaginertia="1e-06 1e-06 1e-06" pos="0 0 0" />
+                      <site name="right_gripper_tip_middle_link" size="0.01" rgba="0.1 0.4 1 0.6" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="head_camera_link" pos="-1.937121605e-06 -0.1082753717 1.010000795" euler="-2.35618718 0 3.141592626">
+        <inertial mass="0.001" diaginertia="1e-06 1e-06 1e-06" pos="0 0 0" />
+        <site name="head_camera_link" size="0.01" rgba="0.1 0.4 1 0.6" />
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="world_root" body2="left_shoulder_pitch_link" />
+    <exclude body1="left_shoulder_pitch_link" body2="left_shoulder_roll_link" />
+    <exclude body1="left_shoulder_roll_link" body2="left_shoulder_yaw_link" />
+    <exclude body1="left_shoulder_yaw_link" body2="left_elbow_pitch_link" />
+    <exclude body1="left_elbow_pitch_link" body2="left_wrist_yaw_motor_link" />
+    <exclude body1="left_wrist_yaw_motor_link" body2="left_wrist_roll_link" />
+    <exclude body1="left_wrist_roll_link" body2="left_wrist_pitch_link" />
+    <exclude body1="left_wrist_pitch_link" body2="left_gripper_finger_left_link" />
+    <exclude body1="left_wrist_pitch_link" body2="left_gripper_finger_right_link" />
+    <exclude body1="left_wrist_pitch_link" body2="left_wrist_camera_link" />
+    <exclude body1="left_wrist_pitch_link" body2="left_gripper_tip_middle_link" />
+    <exclude body1="world_root" body2="right_shoulder_pitch_link" />
+    <exclude body1="right_shoulder_pitch_link" body2="right_shoulder_roll_link" />
+    <exclude body1="right_shoulder_roll_link" body2="right_shoulder_yaw_link" />
+    <exclude body1="right_shoulder_yaw_link" body2="right_elbow_pitch_link" />
+    <exclude body1="right_elbow_pitch_link" body2="right_wrist_yaw_motor_link" />
+    <exclude body1="right_wrist_yaw_motor_link" body2="right_wrist_roll_motor_link" />
+    <exclude body1="right_wrist_roll_motor_link" body2="right_wrist_pitch_link" />
+    <exclude body1="right_wrist_pitch_link" body2="right_gripper_finger_left_link" />
+    <exclude body1="right_wrist_pitch_link" body2="right_gripper_finger_right_link" />
+    <exclude body1="right_wrist_pitch_link" body2="right_wrist_camera_link" />
+    <exclude body1="right_wrist_pitch_link" body2="right_gripper_tip_middle_link" />
+    <exclude body1="world_root" body2="head_camera_link" />
+  </contact>
+  <equality>
+    <joint joint1="left_gripper_passive_joint" joint2="left_gripper" polycoef="0 1 0 0 0" />
+    <joint joint1="right_gripper_passive_joint" joint2="right_gripper" polycoef="0 1 0 0 0" />
+  </equality>
+  <actuator>
+    <motor name="left_shoulder_pitch" joint="left_shoulder_pitch" forcerange="-17 17" />
+    <motor name="left_shoulder_roll" joint="left_shoulder_roll" forcerange="-14 14" />
+    <motor name="left_shoulder_yaw" joint="left_shoulder_yaw" forcerange="-14 14" />
+    <motor name="left_elbow_pitch" joint="left_elbow_pitch" forcerange="-14 14" />
+    <motor name="left_wrist_yaw" joint="left_wrist_yaw" forcerange="-4 4" />
+    <motor name="left_wrist_roll" joint="left_wrist_roll" forcerange="-4 4" />
+    <motor name="left_wrist_pitch" joint="left_wrist_pitch" forcerange="-4 4" />
+    <motor name="right_shoulder_pitch" joint="right_shoulder_pitch" forcerange="-17 17" />
+    <motor name="right_shoulder_roll" joint="right_shoulder_roll" forcerange="-14 14" />
+    <motor name="right_shoulder_yaw" joint="right_shoulder_yaw" forcerange="-14 14" />
+    <motor name="right_elbow_pitch" joint="right_elbow_pitch" forcerange="-14 14" />
+    <motor name="right_wrist_yaw" joint="right_wrist_yaw" forcerange="-4 4" />
+    <motor name="right_wrist_roll" joint="right_wrist_roll" forcerange="-4 4" />
+    <motor name="right_wrist_pitch" joint="right_wrist_pitch" forcerange="-4 4" />
+    <motor name="left_gripper" joint="left_gripper" forcerange="-4 4" />
+    <motor name="right_gripper" joint="right_gripper" forcerange="-4 4" />
+  </actuator>
+</mujoco>
