@@ -5,7 +5,7 @@
       mesh frames are preserved from lite_urdf; exposed arm/gripper joint names
       and optional ros2_control metadata follow lite_urdf.
     -->
-    <xacro:arg name="emit_ros2_control" default="false"/>
+    <xacro:arg name="emit_ros2_control" default="true"/>
     <xacro:arg name="use_fake_hardware" default="true"/>
     <xacro:arg name="use_sim" default="false"/>
     <xacro:arg name="mode" default="arms_grippers"/>
