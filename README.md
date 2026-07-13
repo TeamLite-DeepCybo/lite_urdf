@@ -25,6 +25,12 @@ robot work, with Flash and Pro collision variants.
   the headless URDFs.
 - `mappings/name_mapping.json` - original CAD link/joint names to cleaned names.
 - `mappings/mesh_mapping.json` - original CAD STL filenames to cleaned filenames.
+- `urdf/*_gripper*_para_Labrefer.urdf` - physically projected dynamics
+  candidates for the lab reference setup and specified assembly.
+- `para_Labrefer/identified_params.json` - original identified dynamics
+  parameter file retained as the export reference.
+- `scripts/export_para_Labrefer_urdf.py` - reproducible para_Labrefer
+  projection/export tool.
 
 ## Current State
 
@@ -183,3 +189,35 @@ Before high-throughput RL training, add or verify:
 
 Use a headless URDF when the upper head/top assembly should be omitted from
 visualization/import.
+
+### para_Labrefer Identified Dynamics Candidates
+
+Regenerate the para_Labrefer candidates after replacing the identification
+results:
+
+```bash
+python3 scripts/export_para_Labrefer_urdf.py
+```
+
+The `_para_Labrefer.urdf` suffix means the file is a dynamics URDF for the
+laboratory reference environment and the specified robot assembly. These files
+carry identified dynamics content: center-of-mass position, mass, rotational
+inertia matrix, viscous damping, and dry Coulomb friction. They are meant to
+restore the measured lab-assembly behavior more closely in simulation than the
+visual/CAD-oriented baseline URDFs.
+
+The exporter writes the four gripper variants only. It does not export O6 hand
+variants because the identification model used the two-finger gripper
+mechanism. Identified inertial parameters are converted from Pinocchio's
+link-origin convention to URDF center-of-mass inertias after a
+positive-semidefinite pseudo-inertia projection. Projected centers of mass more
+than `0.30 m` from the link origin are rejected in favor of a regularized
+nominal block.
+
+Viscous and Coulomb terms are written to each arm joint's standard URDF
+`<dynamics>` element. Constant effort offsets are listed in
+`urdf/PARA_LABREFER_EXPORT_REPORT.md` for reference because URDF has no
+standard field for them and they may contain torque-sensor bias. Review that
+report before selecting a generated candidate at runtime. The source fit is
+rank deficient (`132 / 222`), so the projected files are simulator-loadable
+candidates rather than uniquely identified true per-link inertias.
