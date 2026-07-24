@@ -212,7 +212,11 @@ mechanism. Identified inertial parameters are converted from Pinocchio's
 link-origin convention to URDF center-of-mass inertias after a
 positive-semidefinite pseudo-inertia projection. Projected centers of mass more
 than `0.30 m` from the link origin are rejected in favor of a regularized
-nominal block.
+nominal block. The two shoulder-pitch groups are handled separately: their mass
+is nearly unobservable because the physical structure lies predominantly along
+the pitch axes. A free PSD projection produces artificial off-axis COM values,
+so the exporter retains their small nominal mass/inertia and projects each
+nominal inertial origin onto its joint axis.
 
 Viscous and Coulomb terms are written to each arm joint's standard URDF
 `<dynamics>` element. Constant effort offsets are listed in

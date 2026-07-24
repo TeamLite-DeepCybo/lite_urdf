@@ -27,6 +27,11 @@ DEFAULT_SOURCES = (
 # damping and Coulomb magnitudes are invariant; a constant effort term is not.
 TARGET_COORDINATE_SIGN = {"right_elbow_pitch": -1.0}
 REFERENCE_PARAMS = REPO_ROOT / "para_Labrefer" / "identified_params.json"
+AXIS_ALIGNED_NEGLIGIBLE_MASS_BODIES = {
+    "left_shoulder_pitch",
+    "right_shoulder_pitch",
+}
+NEGLIGIBLE_MASS_THRESHOLD_KG = 1e-8
 
 
 @dataclass(frozen=True)
@@ -48,7 +53,7 @@ class ExportRow:
     action: str
     raw_mass: float
     output_mass: float
-    com_norm: float
+    output_com: tuple[float, float, float]
     raw_pseudo_min_eigenvalue: float
     output_inertia_min_eigenvalue: float
 
@@ -210,14 +215,21 @@ def export_one(
             raise RuntimeError(f"joint {target_joint} in {source} has no child")
         target_link = child.attrib["link"]
         link = links[target_link]
-        com_norm = float(np.linalg.norm(candidate.com))
-        if com_norm <= max_com_norm:
+        projected_com_norm = float(np.linalg.norm(candidate.com))
+        if (
+            body in AXIS_ALIGNED_NEGLIGIBLE_MASS_BODIES
+            and abs(candidate.raw_mass) <= NEGLIGIBLE_MASS_THRESHOLD_KG
+        ):
+            regularize_existing_inertia(link, epsilon=inertia_epsilon)
+            align_existing_inertial_origin_to_joint_axis(link, joint)
+            action = "keep_nominal_axis_aligned_regularized"
+        elif projected_com_norm <= max_com_norm:
             set_link_inertial(link, candidate.mass, candidate.com, candidate.inertia_com)
             action = "write_projected"
         else:
             regularize_existing_inertia(link, epsilon=inertia_epsilon)
             action = "keep_nominal_far_com_regularized"
-        mass, inertia_com = read_link_mass_and_inertia(link)
+        mass, com, inertia_com = read_link_inertial(link)
         rows.append(
             ExportRow(
                 source=source.name,
@@ -227,7 +239,7 @@ def export_one(
                 action=action,
                 raw_mass=candidate.raw_mass,
                 output_mass=mass,
-                com_norm=com_norm,
+                output_com=tuple(float(value) for value in com),
                 raw_pseudo_min_eigenvalue=candidate.raw_pseudo_min_eigenvalue,
                 output_inertia_min_eigenvalue=float(np.min(np.linalg.eigvalsh(inertia_com))),
             )
@@ -250,7 +262,8 @@ def export_one(
     root.insert(
         0,
         ET.Comment(
-            " para_Labrefer dynamics candidate; inertias are PSD-projected and safety-gated. "
+            " para_Labrefer dynamics candidate; inertias are PSD-projected, safety-gated, "
+            "and axis-constrained for negligible shoulder-pitch groups. "
             f"Source parameters: {params_path.name}. Review urdf/PARA_LABREFER_EXPORT_REPORT.md. "
         ),
     )
@@ -317,15 +330,41 @@ def regularize_existing_inertia(link: ET.Element, *, epsilon: float) -> None:
     )
 
 
-def read_link_mass_and_inertia(link: ET.Element) -> tuple[float, np.ndarray]:
+def align_existing_inertial_origin_to_joint_axis(
+    link: ET.Element, joint: ET.Element
+) -> None:
+    inertial = link.find("inertial")
+    if inertial is None:
+        raise RuntimeError(f"axis-aligned link {link.attrib['name']} has no nominal inertia")
+    origin = inertial.find("origin")
+    axis_element = joint.find("axis")
+    if origin is None or axis_element is None:
+        raise RuntimeError(f"axis-aligned joint {joint.attrib['name']} is missing inertial origin or axis")
+    origin_xyz = parse_vector(origin.attrib.get("xyz", "0 0 0"))
+    axis = parse_vector(axis_element.attrib.get("xyz", "1 0 0"))
+    axis_norm = float(np.linalg.norm(axis))
+    if axis_norm <= 0.0 or not math.isfinite(axis_norm):
+        raise RuntimeError(f"axis-aligned joint {joint.attrib['name']} has invalid axis")
+    axis /= axis_norm
+    aligned_origin = axis * float(origin_xyz @ axis)
+    aligned_origin[np.abs(aligned_origin) < 1e-15] = 0.0
+    origin.attrib["xyz"] = vector(aligned_origin)
+
+
+def read_link_inertial(link: ET.Element) -> tuple[float, np.ndarray, np.ndarray]:
     inertial = link.find("inertial")
     if inertial is None:
         raise RuntimeError(f"link {link.attrib['name']} has no inertia after export")
+    origin = inertial.find("origin")
     mass = inertial.find("mass")
     inertia = inertial.find("inertia")
-    if mass is None or inertia is None:
+    if origin is None or mass is None or inertia is None:
         raise RuntimeError(f"link {link.attrib['name']} has incomplete inertia after export")
-    return float(mass.attrib["value"]), inertia_matrix(inertia)
+    return (
+        float(mass.attrib["value"]),
+        parse_vector(origin.attrib.get("xyz", "0 0 0")),
+        inertia_matrix(inertia),
+    )
 
 
 def validate_candidate(
@@ -342,6 +381,21 @@ def validate_candidate(
         raise RuntimeError(f"{source.name} is missing projected bodies: {missing_bodies}")
 
     joints = {joint.attrib["name"]: joint for joint in root.findall("joint")}
+    links = {link.attrib["name"]: link for link in root.findall("link")}
+    for row in rows:
+        if row.action != "keep_nominal_axis_aligned_regularized":
+            continue
+        joint = joints[row.target_joint]
+        _, com, _ = read_link_inertial(links[row.target_link])
+        axis_element = joint.find("axis")
+        if axis_element is None:
+            raise RuntimeError(f"{source.name} joint {row.target_joint} has no axis")
+        axis = parse_vector(axis_element.attrib.get("xyz", "1 0 0"))
+        axis /= np.linalg.norm(axis)
+        perpendicular_com = com - axis * float(com @ axis)
+        if np.linalg.norm(perpendicular_com) > 1e-12:
+            raise RuntimeError(f"{source.name} link {row.target_link} COM is not on the joint axis")
+
     for identified_joint in drive:
         target_joint = target_joint_name(identified_joint)
         dynamics = joints[target_joint].find("dynamics")
@@ -389,6 +443,13 @@ def inertia_matrix(inertia: ET.Element) -> np.ndarray:
     )
 
 
+def parse_vector(value: str) -> np.ndarray:
+    result = np.fromstring(value, sep=" ", dtype=float)
+    if result.shape != (3,) or not np.all(np.isfinite(result)):
+        raise RuntimeError(f"expected a finite 3-vector, got: {value!r}")
+    return result
+
+
 def write_report(
     path: Path,
     *,
@@ -404,7 +465,8 @@ def write_report(
     representative = [row for row in rows if row.source == DEFAULT_SOURCES[0]]
     raw_nonphysical = sum(row.raw_pseudo_min_eigenvalue < 0.0 for row in representative)
     projected = sum(row.action == "write_projected" for row in representative)
-    fallback = len(representative) - projected
+    axis_aligned = sum(row.action == "keep_nominal_axis_aligned_regularized" for row in representative)
+    fallback = len(representative) - projected - axis_aligned
     lines = [
         "# para_Labrefer URDF export report",
         "",
@@ -424,7 +486,8 @@ def write_report(
         f"- Maximum accepted projected COM norm: `{max_com_norm} m`",
         f"- Raw non-PSD inertia groups: `{raw_nonphysical} / {len(representative)}`",
         f"- Projected groups written per URDF: `{projected}`",
-        f"- Nominal fallback groups per URDF: `{fallback}`",
+        f"- Axis-aligned negligible-mass groups per URDF: `{axis_aligned}`",
+        f"- Other nominal fallback groups per URDF: `{fallback}`",
         "",
         "## Outputs",
         "",
@@ -441,23 +504,44 @@ def write_report(
             "",
             "All four outputs share the same moving-link inertia and drive values.",
             "",
-            "| identified body | target link | action | raw mass (kg) | output mass (kg) | projected COM norm (m) | raw pseudo min eig | output inertia min eig |",
+            "| identified body | target link | action | raw mass (kg) | output mass (kg) | output COM norm (m) | raw pseudo min eig | output inertia min eig |",
             "|---|---|---|---:|---:|---:|---:|---:|",
         ]
     )
     for row in representative:
         lines.append(
             f"| {row.body} | {row.target_link} | {row.action} | {row.raw_mass:.8g} | "
-            f"{row.output_mass:.8g} | {row.com_norm:.8g} | "
+            f"{row.output_mass:.8g} | {np.linalg.norm(row.output_com):.8g} | "
             f"{row.raw_pseudo_min_eigenvalue:.8g} | {row.output_inertia_min_eigenvalue:.8g} |"
         )
     lines.extend(
         [
             "",
-            "The left and right shoulder-pitch projections are rejected because their",
-            "COM norms are about 0.92 m. Their nominal blocks are retained and zero",
-            "inertia eigenvalues are regularized to the projection epsilon for simulator",
-            "stability.",
+            "The shoulder-pitch links are nearly unobservable in this identification because",
+            "their physical mass distribution lies predominantly along the pitch rotation",
+            "axes. The JSON `mx`, `my`, and `mz` values are first moments, not COM",
+            "coordinates. Dividing them by the near-zero identified mass is ill-conditioned;",
+            "the approximately 0.92 m values produced by unconstrained PSD projection are not",
+            "physical COM estimates. The exporter therefore retains the small nominal",
+            "mass/inertia needed for simulator stability and projects each nominal inertial",
+            "origin onto its joint axis.",
+            "",
+            "| identified body | output COM xyz (m) | output first moment xyz (kg m) | output inertia diagonal (kg m^2) |",
+            "|---|---:|---:|---:|",
+        ]
+    )
+    for row in representative:
+        if row.action != "keep_nominal_axis_aligned_regularized":
+            continue
+        output_com = np.asarray(row.output_com)
+        first_moment = row.output_mass * output_com
+        diagonal = " ".join([f"{row.output_inertia_min_eigenvalue:.12g}"] * 3)
+        lines.append(
+            f"| {row.body} | `{vector(output_com)}` | `{vector(first_moment)}` | "
+            f"`{diagonal}` |"
+        )
+    lines.extend(
+        [
             "",
             "## Drive export",
             "",

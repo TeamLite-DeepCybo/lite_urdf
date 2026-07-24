@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="lite_000_asm_headless">
-    <!-- para_Labrefer dynamics candidate; inertias are PSD-projected and safety-gated. Source parameters: identified_params.json. Review urdf/PARA_LABREFER_EXPORT_REPORT.md. -->
+    <!-- para_Labrefer dynamics candidate; inertias are PSD-projected, safety-gated, and axis-constrained for negligible shoulder-pitch groups. Source parameters: identified_params.json. Review urdf/PARA_LABREFER_EXPORT_REPORT.md. -->
     <link name="right_wrist_yaw_motor_link">
         <inertial>
             <origin xyz="0.0387077492158 -0.131636977415 0.00571050995477" rpy="0 0 0" />
@@ -27,7 +27,7 @@
         <inertial>
             <origin xyz="0.0328079500344 -0.163357865067 0.0253172431539" rpy="0 0 0" />
             <mass value="0.208620653611" />
-            <inertia ixx="0.000428023112233" ixy="0.000105165682744" ixz="-0.00101670002425" iyy="0.00526594028312" iyz="-6.84921552434e-06" izz="0.00485053425269" />
+            <inertia ixx="0.000428023112233" ixy="0.000105165682744" ixz="-0.00101670002425" iyy="0.00526594028312" iyz="-6.84921552433e-06" izz="0.00485053425269" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -63,7 +63,7 @@
     </link>
     <link name="left_shoulder_pitch_link">
         <inertial>
-            <origin xyz="-0.017422 0.0100505 0.0023346" rpy="-0.299414 0 0" />
+            <origin xyz="-0.017422 0 0" rpy="-0.299414 0 0" />
             <mass value="0.0000497" />
             <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08" />
         </inertial>
@@ -175,7 +175,7 @@
         <inertial>
             <origin xyz="0.0140464804868 -0.0103417000946 0.0606305237256" rpy="0 0 0" />
             <mass value="0.0776486445447" />
-            <inertia ixx="7.30055859826e-07" ixy="-1.53203767706e-05" ixz="-6.53141362511e-06" iyy="0.000390785854726" iyz="-2.56135804942e-07" izz="0.000391277439368" />
+            <inertia ixx="7.30055859825e-07" ixy="-1.53203767706e-05" ixz="-6.53141362511e-06" iyy="0.000390785854726" iyz="-2.56135804942e-07" izz="0.000391277439368" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -255,7 +255,7 @@
     </link>
     <link name="right_shoulder_pitch_link">
         <inertial>
-            <origin xyz="0.017422 0.0072834 0.0073085" rpy="0.25946 0 0" />
+            <origin xyz="0.017422 0 0" rpy="0.25946 0 0" />
             <mass value="0.0000497" />
             <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08" />
         </inertial>
