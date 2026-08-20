@@ -12,6 +12,7 @@
     <xacro:arg name="can_interface_left" default="can0"/>
     <xacro:arg name="can_interface_right" default="can1"/>
     <xacro:arg name="calibration_file" default=""/>
+    <xacro:arg name="calibration_mode" default="false"/>
     <xacro:include filename="lite.ros2_control.xacro"/>
 
     <link name="right_wrist_yaw_motor_link">
@@ -736,6 +737,7 @@
             mode="$(arg mode)"
             can_interface_left="$(arg can_interface_left)"
             can_interface_right="$(arg can_interface_right)"
-            calibration_file="$(arg calibration_file)"/>
+            calibration_file="$(arg calibration_file)"
+            calibration_mode="$(arg calibration_mode)"/>
     </xacro:if>
 </robot>

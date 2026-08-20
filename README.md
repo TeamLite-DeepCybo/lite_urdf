@@ -49,7 +49,8 @@ old model into this package; the STL frames are different.
 
 `right_elbow_pitch` uses the corrected Lite URDF axis and positive motion
 range. Motor direction signs live in `lite.ros2_control.xacro` and calibration
-lives in `lite_config/calibration.yaml`.
+is supplied at runtime through an explicit absolute `calibration_file` path to
+a robot-local, untracked YAML; the repository ships no machine calibration.
 
 ## RViz
 
