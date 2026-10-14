@@ -56,6 +56,12 @@
       <state_interface name="velocity"/>
       <state_interface name="effort"/>
       <xacro:unless value="${use_sim or use_fake_hardware}">
+        <!-- Host CAN receipt metadata; broadcast on dynamic_joint_states.
+             Not a firmware sampling timestamp and not valid before status RX. -->
+        <state_interface name="feedback_age_s"/>
+        <state_interface name="feedback_sequence"/>
+      </xacro:unless>
+      <xacro:unless value="${use_sim or use_fake_hardware}">
         <param name="can_id">${can_id}</param>
         <param name="model">${model}</param>
         <param name="direction">${direction}</param>
