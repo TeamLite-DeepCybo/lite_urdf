@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Generate the Lite MuJoCo model from the xacro-derived URDF.
+"""
+Generate the Lite MuJoCo model from the xacro-derived URDF.
 
 The MuJoCo compiler is the source of truth for URDF joint/body transforms.
 This script then adds visual meshes, preserved task-frame sites, gripper
@@ -10,14 +11,14 @@ from __future__ import annotations
 
 import argparse
 import os
+from pathlib import Path
 import shutil
 import subprocess
 import tempfile
 import xml.etree.ElementTree as ET
-from pathlib import Path
 
-import trimesh
 from scipy.spatial.transform import Rotation
+import trimesh
 
 
 ROOT = Path(__file__).resolve().parents[1]

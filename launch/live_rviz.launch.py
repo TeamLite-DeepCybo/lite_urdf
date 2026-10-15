@@ -1,4 +1,5 @@
-"""Live RViz visualization for the production Lite arms+grippers model.
+"""
+Live RViz visualization for the production Lite arms+grippers model.
 
 This is intended to run beside bar_bringup_lite/real.launch.py. The real
 bringup owns CAN, controllers, and /lite/joint_states; this launch only
